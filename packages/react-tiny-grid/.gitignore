@@ -1,0 +1,11 @@
+*.log
+**/node_modules/
+**/build/
+**/.rpt2_cache
+**/.rts2_cache
+*.swp
+packages/cli/forestry/.env
+*.tgz
+.DS_Store
+**/docs/
+.idea/
