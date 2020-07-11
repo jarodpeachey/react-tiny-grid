@@ -1,42 +1,51 @@
 {
-  "name": "react-tiny-grid-demo",
-  "version": "0.1.0-alpha.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "start": "webpack-dev-server --open --mode development",
-    "build": "webpack --mode production"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/preset-react": "^7.10.1",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-styled-components": "^1.10.7",
-    "css-loader": "^3.5.3",
-    "eslint": "^7.1.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "html-loader": "^1.1.0",
-    "html-webpack-plugin": "^4.3.0",
-    "moment": "^2.27.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "gatsby": "^2.23.12",
+    "gatsby-image": "^2.4.9",
+    "gatsby-plugin-manifest": "^2.4.14",
+    "gatsby-plugin-offline": "^3.2.13",
+    "gatsby-plugin-react-helmet": "^3.3.6",
+    "gatsby-plugin-sharp": "^2.6.14",
+    "gatsby-plugin-styled-components": "^3.3.10",
+    "gatsby-source-filesystem": "^2.3.14",
+    "gatsby-transformer-sharp": "^2.5.7",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-tiny-grid": "^0.1.0-alpha.0",
-    "style-loader": "^1.2.1",
     "styled-components": "^5.1.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "@react-tiny-grid/core": "^0.1.0-alpha.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }

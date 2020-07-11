@@ -1,5 +1,5 @@
 {
-  "name": "react-tiny-grid",
+  "name": "@react-tiny-grid/core",
   "version": "0.1.0-alpha.0",
   "description": "A simple, lightweight grid system for React",
   "main": "index.js",
@@ -21,7 +21,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "styled-components": "^5.1.0"
   },
-  "gitHead": "34a3bd43164bf1bbd7482554822e3a42f0afa923",
+  "gitHead": "c286971b69cea8f2994ed5f87021e8c64456bae6",
   "repository": {
     "type": "git",
     "url": "https://github.com/jarodpeachey/react-tiny-grid",
