@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A simple, lightweight grid system for React",
   "main": "index.js",
-  "private": true,
+  "private": false,
   "scripts": {
     "lint": "eslint \"./packages/**/*{.js,.jsx}\"",
     "compile": "npx babel src --out-dir lib"
