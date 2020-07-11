@@ -7,28 +7,28 @@ export const Row = ({
   children,
   className,
   id,
-  breakpoints = [769],
+  breakpoints = [0],
   spacing = [12],
   flexDirections,
-}) => (
-  <Wrapper
-    className={className}
-    id={id}
-    breakpoint={breakpoints[0]}
-    breakpointTwo={breakpoints[1] || breakpoints[0]}
-    spacingX={spacing[0]}
-    spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
-    flexDirections={flexDirections || null}
-    customStyles={customStyles}
-  >
-    {React.Children.toArray(children).map((item) =>
-      item ? (
-        <>
-          {item.props && item.props.noGrid ? (
-            <>{item}</>
-          ) : (
+  maxColumnCount,
+}) => {
+  return (
+    <Wrapper
+      className={className}
+      id={id}
+      breakpoint={breakpoints[0]}
+      breakpointTwo={breakpoints[1] || breakpoints[0]}
+      spacingX={spacing[0]}
+      spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
+      flexDirections={flexDirections || null}
+      maxColumnCount={maxColumnCount}
+    >
+      {React.Children.toArray(children).map((item) => {
+        console.log(item);
+
+        return (
+          item && (
             <Column
-              {...item.props}
               key='column'
               breakpoints={breakpoints}
               spacingX={spacing[0]}
@@ -36,15 +36,17 @@ export const Row = ({
                 typeof spacing[1] === 'number' ? spacing[1] : spacing[0]
               }
               widths={item.props.widths}
+              offsets={item.props.offsets}
+              maxColumnCount={maxColumnCount}
             >
-              {item}
+              {item.props.children}
             </Column>
-          )}
-        </>
-      ) : null
-    )}
-  </Wrapper>
-);
+          )
+        );
+      })}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
   ${(props) =>

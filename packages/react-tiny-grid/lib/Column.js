@@ -23,19 +23,28 @@ var Column = function Column(_ref) {
       spacingY = _ref.spacingY,
       breakpoints = _ref.breakpoints,
       widths = _ref.widths,
-      maxColumnSize = _ref.maxColumnSize;
+      offsets = _ref.offsets,
+      _ref$maxColumnCount = _ref.maxColumnCount,
+      maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount;
+  console.log(maxColumnCount);
+  console.log(12 / (12 / maxColumnCount));
+  console.log(12 / maxColumnCount / 12 * 100);
+  console.log(12 / (maxColumnCount * 100) / 12);
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
-    style: style,
-    demo: demo,
-    maxColumnSize: maxColumnSize,
+    className: className,
+    id: id,
+    maxColumnCount: maxColumnCount,
     spacingX: spacingX,
     spacingY: spacingY,
-    breakpointOne: breakpoints[0],
-    breakpointTwo: breakpoints[1] && breakpoints[1],
-    breakpointThree: breakpoints[2] && breakpoints[2],
-    widthOne: widths[0],
-    widthTwo: widths[1] && widths[1],
-    widthThree: widths[2] && widths[2]
+    breakpointOne: breakpoints && breakpoints.length >= 1 && breakpoints[0],
+    breakpointTwo: breakpoints && breakpoints.length >= 1 && breakpoints[1] && breakpoints[1],
+    breakpointThree: breakpoints && breakpoints.length >= 1 && breakpoints[2] && breakpoints[2],
+    widthOne: widths && widths.length > 0 ? widths[0] : 'auto',
+    widthTwo: widths && widths.length > 0 ? widths[1] ? widths[1] : widths[0] : 'auto',
+    widthThree: widths && widths.length > 0 ? widths[2] ? widths[2] : widths[1] : 'auto',
+    offsetOne: offsets && offsets.length > 0 ? offsets[0] : null,
+    offsetTwo: offsets && offsets.length > 0 ? offsets[1] ? offsets[1] : offsets[0] : null,
+    offsetThree: offsets && offsets.length > 0 ? offsets[2] ? offsets[2] : offsets[1] : null
   }, children);
 };
 
@@ -56,20 +65,38 @@ var Info = _styledComponents["default"].div.withConfig({
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Column__Wrapper",
   componentId: "xu10n0-2"
-})(["width:100%;> *{width:100% !important;}flex:1 1 0;padding:", "px ", "px;", " ", " ", " ", " ", " ", ""], function (props) {
+})(["width:100%;> *{width:100% !important;}flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
+  return 12 / props.maxColumnCount / 12 * 100;
+}, function (props) {
   return props.spacingY;
 }, function (props) {
   return props.spacingX;
 }, function (props) {
-  return props.alignBottom && (0, _styledComponents.css)(["align-items:flex-end;"]);
+  return props.breakpointOne;
 }, function (props) {
-  return props.widthOne !== 'auto' ? "\n    @media (min-width: ".concat(props.breakpointOne, "px) and (max-width: ").concat(props.breakpointTwo || 9999, "px) {\n    width: ").concat(props.widthOne / 12 * 100, "% !important;\n    padding: ").concat(props.spacingY, "px ").concat(props.spacingX, "px !important;\n    margin: 0 !important;\n    display: flex !important;\n    flex: none !important;\n  }\n  ") : '';
+  return props.breakpointTwo || 9999;
 }, function (props) {
-  return props.widthTwo !== 'auto' ? "\n        @media (min-width: ".concat(props.breakpointTwo, "px) {\n          width: ").concat(props.widthTwo / 12 * 100, "% !important;\n          padding: ").concat(props.spacingY, "px ").concat(props.spacingX, "px!important;\n          margin: 0 !important;\n          display: flex !important;\n          flex: none !important;\n        }\n      ") : '';
+  return props.widthOne !== 'auto' ? "".concat(props.widthOne / 12 * 100, "%") : null;
 }, function (props) {
-  return props.widthThree !== 'auto' ? "\n        @media (min-width: ".concat(props.breakpointThree, "px) {\n          width: ").concat(props.widthThree / 12 * 100, "% !important;\n          padding: ").concat(props.spacingY, "px ").concat(props.spacingX, "px !important;\n          margin: 0 !important;\n          display: flex !important;\n          flex: none !important;\n        }\n      ") : '';
+  return props.widthOne !== 'auto' ? 'none !important' : null;
 }, function (props) {
-  return props.widthOne === 'auto' ? "\n    @media (min-width: ".concat(props.breakpointOne, "px) and (max-width: ").concat(props.breakpointTwo !== undefined ? props.breakpointTwo : 2400, "px) {\n    // min-width: 50%;\n    flex: 1 1 0;\n  }\n  ") : '';
+  return props.offsetOne ? "".concat(props.offsetOne / 12 * 100, "%") : null;
 }, function (props) {
-  return props.widthTwo === 'auto' ? "\n    @media (min-width: ".concat(props.breakpointTwo, "px) {\n    // max-width: 50% !important;\n    min-width: 50%;\n    flex: 1 1 0;\n  }\n  ") : '';
+  return props.breakpointTwo;
+}, function (props) {
+  return props.breakpointThree || 9999;
+}, function (props) {
+  return props.widthTwo !== 'auto' ? "".concat(props.widthTwo / 12 * 100, "%") : null;
+}, function (props) {
+  return props.widthTwo !== 'auto' ? 'none !important' : null;
+}, function (props) {
+  return props.offsetTwo ? "".concat(props.offsetTwo / 12 * 100, "%") : null;
+}, function (props) {
+  return props.breakpointThree;
+}, function (props) {
+  return props.widthThree !== 'auto' ? "".concat(props.widthThree / 12 * 100, "%") : null;
+}, function (props) {
+  return props.widthThree !== 'auto' ? 'none !important' : null;
+}, function (props) {
+  return props.offsetThree ? "".concat(props.offsetThree / 12 * 100, "%") : null;
 });

@@ -9,8 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Row = void 0;
 
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
@@ -24,10 +22,11 @@ var Row = function Row(_ref) {
       className = _ref.className,
       id = _ref.id,
       _ref$breakpoints = _ref.breakpoints,
-      breakpoints = _ref$breakpoints === void 0 ? [769] : _ref$breakpoints,
+      breakpoints = _ref$breakpoints === void 0 ? [0] : _ref$breakpoints,
       _ref$spacing = _ref.spacing,
       spacing = _ref$spacing === void 0 ? [12] : _ref$spacing,
-      flexDirections = _ref.flexDirections;
+      flexDirections = _ref.flexDirections,
+      maxColumnCount = _ref.maxColumnCount;
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
     className: className,
     id: id,
@@ -36,15 +35,18 @@ var Row = function Row(_ref) {
     spacingX: spacing[0],
     spacingY: typeof spacing[1] === 'number' ? spacing[1] : spacing[0],
     flexDirections: flexDirections || null,
-    customStyles: customStyles
+    maxColumnCount: maxColumnCount
   }, _react["default"].Children.toArray(children).map(function (item) {
-    return item ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, item.props && item.props.noGrid ? /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, item) : /*#__PURE__*/_react["default"].createElement(_Column.Column, (0, _extends2["default"])({}, item.props, {
+    console.log(item);
+    return item && /*#__PURE__*/_react["default"].createElement(_Column.Column, {
       key: "column",
       breakpoints: breakpoints,
       spacingX: spacing[0],
       spacingY: typeof spacing[1] === 'number' ? spacing[1] : spacing[0],
-      widths: item.props.widths
-    }), item)) : null;
+      widths: item.props.widths,
+      offsets: item.props.offsets,
+      maxColumnCount: maxColumnCount
+    }, item.props.children);
   }));
 };
 

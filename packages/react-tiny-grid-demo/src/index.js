@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 import styled from 'styled-components';
 import './style.css';
-import { Row } from 'react-tiny-grid';
+import { Row, Column } from 'react-tiny-grid';
 
 const Routes = () => (
   <>
@@ -18,90 +18,537 @@ const Routes = () => (
       <div
         style={{
           fontFamily: 'monospace',
+          fontSize: 15,
           background: '#000000dd',
           padding: 16,
           borderRadius: 5,
-          color: '#ffffffdd',
+          color: '#ffffff',
           margin: '16px 0',
         }}
       >
-        &lt;Row breakpoints=&#123;&#91;769, 960&#93;&#125;&gt;
+        &lt;Row breakpoints=&#123;&#91;769&#93;&#125;&gt; &#127;&#127;&#127;
         <br />
-        &#127;&#127;&#127;&lt;div widths=&#123;&#91;6, 4&#93;&#125; /&gt;
+        &#127;&#127; &lt;Column /&gt;
         <br />
-        &#127;&#127;&#127;&lt;div widths=&#123;&#91;6, 4&#93;&#125; /&gt;
+        &#127;&#127; &lt;Column /&gt;
         <br />
-        &#127;&#127;&#127;&lt;div widths=&#123;&#91;6, 4&#93;&#125; /&gt;
+        &#127;&#127; &lt;Column /&gt;
         <br />
         &lt;/Row&gt;
       </div>
+      <h2>Auto Widths</h2>
+      <p>
+        For a grid that's auto-responsive, just wrap your Columns in a Row
+        component and let the magic happen!
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row>
+          <Column>
+            <Demo>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo>Auto</Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row&gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div>
+      <br />
+      <br />
+      <h2>Custom Spacing</h2>
+      <p>
+        You can customize the spacing between each column using the{' '}
+        <code>spacing</code> prop. For example: <code>spacing={'{[x, y]}'}</code>
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row maxColumnCount={3} spacing={[6, 2]}>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row spacing={'{[6, 2]}'}&gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div>
+      <br />
+      <br />
+      <h2>Max Column Count</h2>
+      <p>
+        To limit how many columns are displayed in a single row, pass in a{' '}
+        <code>maxColumnCount</code> prop with a value from 1-12.
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row maxColumnCount={3}>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+          <Column>
+            <Demo style={{ padding: '12px 32px' }}>Auto</Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row maxColumnCount={'{3}'}&gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &#127;&#127; &lt;Column /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div>
+      <br />
+      <br />
+      <h2>Custom Column Widths</h2>
+      <p>
+        You can define custom column widths via the <code>widths</code> props,
+        which accepts an array.
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row breakpoints={[576]}>
+          <Column widths={[4]}>
+            <Demo>
+              <div>576px: 4</div>
+            </Demo>
+          </Column>
+          <Column widths={[8]}>
+            <Demo>
+              <div>576px: 8</div>
+            </Demo>
+          </Column>
+          <Column widths={[3]}>
+            <Demo>
+              <div>576px: 3</div>
+            </Demo>
+          </Column>
+          <Column widths={[9]}>
+            <Demo>
+              <div>576px: 9</div>
+            </Demo>
+          </Column>
+          <Column widths={[7]}>
+            <Demo>
+              <div>576px: 7</div>
+            </Demo>
+          </Column>
+          <Column widths={[5]}>
+            <Demo>
+              <div>576px: 5</div>
+            </Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row breakpoints={'{[576]}'}&gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column widths={'{[4]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={'{[8]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={'{[3]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={'{[9]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={'{[7]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={'{[5]}'} /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div>
+      <br />
+      <br />
+      <h2>Multiple Breakpoints</h2>
+      <p>
+        You can set up to three breakpoints to create a unique layout for each
+        screen size.
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row breakpoints={[576, 769, 1000]}>
+          <Column widths={[3, 2, 8]}>
+            <Demo>
+              <div>576px: 3</div>
+              <div>769px: 2</div>
+              <div>1000px: 8</div>
+            </Demo>
+          </Column>
+          <Column widths={[5, 10, 4]}>
+            <Demo>
+              <div>576px: 5</div>
+              <div>769px: 10</div>
+              <div>1000px: 4</div>
+            </Demo>
+          </Column>
+          <Column widths={[4, 3, 2]}>
+            <Demo>
+              <div>576px: 4</div>
+              <div>769px: 3</div>
+              <div>1000px: 2</div>
+            </Demo>
+          </Column>
+          <Column widths={[4, 9, 7]}>
+            <Demo>
+              <div>576px: 4</div>
+              <div>769px: 9</div>
+              <div>1000px: 7</div>
+            </Demo>
+          </Column>
+          <Column widths={[5, 7, 3]}>
+            <Demo>
+              <div>576px: 5</div>
+              <div>769px: 7</div>
+              <div>1000px: 3</div>
+            </Demo>
+          </Column>
+          <Column widths={[3, 5, 12]}>
+            <Demo>
+              <div>576px: 3</div>
+              <div>769px: 5</div>
+              <div>1000px: 12</div>
+            </Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row breakpoints={'{[576, 769, 1000]}'}&gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column widths={`{[3, 2, 8]}`} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={`{[5, 10, 4]}`} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={`{[4, 3, 2]}`} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={`{[4, 9, 7]}`} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={`{[5, 7, 3]}`} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths={`{[3, 5, 12]}`} /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Row breakpoints={[576]}>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+        <Column>
+          <Demo>Auto</Demo>
+        </Column>
+      </Row>
       <Row breakpoints={[576, 800]}>
-        <div widths={[3, 1]}>
+        <Column widths={[3, 1]}>
           <Demo>3, 1</Demo>
-        </div>
-        <div widths={[5, 11]}>
+        </Column>
+        <Column widths={[5, 11]}>
           <Demo>5, 11</Demo>
-        </div>
-        <div widths={[4, 2]}>
+        </Column>
+        <Column widths={[4, 2]}>
           <Demo>2</Demo>
-        </div>
-        <div widths={[4, 10]}>
+        </Column>
+        <Column widths={[4, 10]}>
           <Demo>4, 10</Demo>
-        </div>
-        <div widths={[3, 3]}>
+        </Column>
+        <Column widths={[3, 3]}>
           <Demo>3, 3</Demo>
-        </div>
-        <div widths={[5, 9]}>
+        </Column>
+        <Column widths={[5, 9]}>
           <Demo>5, 9</Demo>
-        </div>
-        <div widths={[5, 4]}>
+        </Column>
+        <Column widths={[5, 4]}>
           <Demo>5, 4</Demo>
-        </div>
-        <div widths={[3, 8]}>
+        </Column>
+        <Column widths={[3, 8]}>
           <Demo>3, 8</Demo>
-        </div>
-        <div widths={[4, 5]}>
+        </Column>
+        <Column widths={[4, 5]}>
           <Demo>4, 5</Demo>
-        </div>
-        <div widths={[4, 7]}>
+        </Column>
+        <Column widths={[4, 7]}>
           <Demo>4, 7</Demo>
-        </div>
-        <div widths={[3, 6]}>
+        </Column>
+        <Column widths={[3, 6]}>
           <Demo>3, 6</Demo>
-        </div>
-        <div widths={[5, 6]}>
+        </Column>
+        <Column widths={[5, 6]}>
           <Demo>5, 6</Demo>
-        </div>
-        <div widths={[3, 7]}>
+        </Column>
+        <Column widths={[3, 7]}>
           <Demo>3, 7</Demo>
-        </div>
-        <div widths={[6, 5]}>
+        </Column>
+        <Column widths={[6, 5]}>
           <Demo>6, 5</Demo>
-        </div>
-        <div widths={[3, 8]}>
+        </Column>
+        <Column widths={[3, 8]}>
           <Demo>3, 8</Demo>
-        </div>
-        <div widths={[5, 4]}>
+        </Column>
+        <Column widths={[5, 4]}>
           <Demo>5, 4</Demo>
-        </div>
-        <div widths={[3, 9]}>
+        </Column>
+        <Column widths={[3, 9]}>
           <Demo>3, 9</Demo>
-        </div>
-        <div widths={[4, 3]}>
+        </Column>
+        <Column widths={[4, 3]}>
           <Demo>4, 3</Demo>
-        </div>
-        <div widths={[4, 10]}>
+        </Column>
+        <Column widths={[4, 10]}>
           <Demo>4, 10</Demo>
-        </div>
-        <div widths={[5, 2]}>
+        </Column>
+        <Column widths={[5, 2]}>
           <Demo>5, 2</Demo>
-        </div>
-        <div widths={[3, 11]}>
+        </Column>
+        <Column widths={[3, 11]}>
           <Demo>3, 11</Demo>
-        </div>
-        <div widths={[12, 1]}>
+        </Column>
+        <Column widths={[12, 1]}>
           <Demo>12, 1</Demo>
-        </div>
+        </Column>
       </Row>
     </div>
   </>
@@ -111,8 +558,8 @@ const Demo = styled.div`
   background: #546cde;
   color: white;
   font-size: 14px;
-  text-transform: uppercase;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 12px;
