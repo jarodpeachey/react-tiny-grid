@@ -23,9 +23,10 @@ var Row = function Row(_ref) {
   var children = _ref.children,
       className = _ref.className,
       id = _ref.id,
-      customStyles = _ref.customStyles,
-      breakpoints = _ref.breakpoints,
-      spacing = _ref.spacing,
+      _ref$breakpoints = _ref.breakpoints,
+      breakpoints = _ref$breakpoints === void 0 ? [769] : _ref$breakpoints,
+      _ref$spacing = _ref.spacing,
+      spacing = _ref$spacing === void 0 ? [12] : _ref$spacing,
       flexDirections = _ref.flexDirections;
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
     className: className,

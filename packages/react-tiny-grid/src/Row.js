@@ -7,9 +7,8 @@ export const Row = ({
   children,
   className,
   id,
-  customStyles,
-  breakpoints,
-  spacing,
+  breakpoints = [769],
+  spacing = [12],
   flexDirections,
 }) => (
   <Wrapper

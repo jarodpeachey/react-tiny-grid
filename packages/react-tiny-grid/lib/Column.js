@@ -16,15 +16,14 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var Column = function Column(_ref) {
-  var children = _ref.children,
+  var className = _ref.className,
+      id = _ref.id,
+      children = _ref.children,
       spacingX = _ref.spacingX,
       spacingY = _ref.spacingY,
       breakpoints = _ref.breakpoints,
       widths = _ref.widths,
-      maxColumnSize = _ref.maxColumnSize,
-      demo = _ref.demo,
-      alignBottom = _ref.alignBottom,
-      style = _ref.style;
+      maxColumnSize = _ref.maxColumnSize;
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
     style: style,
     demo: demo,
@@ -36,9 +35,8 @@ var Column = function Column(_ref) {
     breakpointThree: breakpoints[2] && breakpoints[2],
     widthOne: widths[0],
     widthTwo: widths[1] && widths[1],
-    widthThree: widths[2] && widths[2],
-    alignBottom: alignBottom
-  }, demo ? /*#__PURE__*/_react["default"].createElement(Demo, null, /*#__PURE__*/_react["default"].createElement(Info, null, /*#__PURE__*/_react["default"].createElement("strong", null, breakpoints[0], "px:"), ' ', widths[0]), /*#__PURE__*/_react["default"].createElement(Info, null, /*#__PURE__*/_react["default"].createElement("strong", null, breakpoints[1], "px:"), ' ', widths[1])) : children);
+    widthThree: widths[2] && widths[2]
+  }, children);
 };
 
 exports.Column = Column;

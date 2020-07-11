@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 export const Column = ({
+  className,
+  id,
   children,
   spacingX,
   spacingY,
   breakpoints,
   widths,
-  maxColumnSize,
-  demo,
-  alignBottom,
-  style,
+  maxColumnSize
 }) => (
   <Wrapper
     style={style}
@@ -25,28 +24,8 @@ export const Column = ({
     widthOne={widths[0]}
     widthTwo={widths[1] && widths[1]}
     widthThree={widths[2] && widths[2]}
-    alignBottom={alignBottom}
   >
-    {demo ? (
-      <Demo>
-        <Info>
-          <strong>
-            {breakpoints[0]}
-            px:
-          </strong>{' '}
-          {widths[0]}
-        </Info>
-        <Info>
-          <strong>
-            {breakpoints[1]}
-            px:
-          </strong>{' '}
-          {widths[1]}
-        </Info>
-      </Demo>
-    ) : (
-      children
-    )}
+    {children}
   </Wrapper>
 );
 
