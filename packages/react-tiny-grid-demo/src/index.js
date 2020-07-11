@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
@@ -109,7 +110,11 @@ const Routes = () => (
       <h2>Custom Spacing</h2>
       <p>
         You can customize the spacing between each column using the{' '}
-        <code>spacing</code> prop. For example: <code>spacing={'{[x, y]}'}</code>
+        <code>spacing</code> prop. For example:{' '}
+        <code>
+          spacing=
+          {'{[x, y]}'}
+        </code>
       </p>
       <div
         style={{
@@ -158,7 +163,9 @@ const Routes = () => (
           borderTopLeftRadius: 0,
         }}
       >
-        &lt;Row spacing={'{[6, 2]}'}&gt; &#127;&#127;&#127;
+        &lt;Row spacing=
+        {'{[6, 2]}'}
+        &gt; &#127;&#127;&#127;
         <br />
         &#127;&#127; &lt;Column /&gt;
         <br />
@@ -228,7 +235,9 @@ const Routes = () => (
           borderTopLeftRadius: 0,
         }}
       >
-        &lt;Row maxColumnCount={'{3}'}&gt; &#127;&#127;&#127;
+        &lt;Row maxColumnCount=
+        {'{3}'}
+        &gt; &#127;&#127;&#127;
         <br />
         &#127;&#127; &lt;Column /&gt;
         <br />
@@ -310,19 +319,27 @@ const Routes = () => (
           borderTopLeftRadius: 0,
         }}
       >
-        &lt;Row breakpoints={'{[576]}'}&gt; &#127;&#127;&#127;
+        &lt;Row breakpoints=
+        {'{[576]}'}
+        &gt; &#127;&#127;&#127;
         <br />
-        &#127;&#127; &lt;Column widths={'{[4]}'} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[4]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={'{[8]}'} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[8]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={'{[3]}'} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[3]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={'{[9]}'} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[9]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={'{[7]}'} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[7]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={'{[5]}'} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[5]}'} /&gt;
         <br />
         &lt;/Row&gt;
       </div>
@@ -404,24 +421,234 @@ const Routes = () => (
           borderTopLeftRadius: 0,
         }}
       >
-        &lt;Row breakpoints={'{[576, 769, 1000]}'}&gt; &#127;&#127;&#127;
+        &lt;Row breakpoints=
+        {'{[576, 769, 1000]}'}
+        &gt; &#127;&#127;&#127;
         <br />
-        &#127;&#127; &lt;Column widths={`{[3, 2, 8]}`} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 2, 8]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={`{[5, 10, 4]}`} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[5, 10, 4]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={`{[4, 3, 2]}`} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[4, 3, 2]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={`{[4, 9, 7]}`} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[4, 9, 7]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={`{[5, 7, 3]}`} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[5, 7, 3]}'} /&gt;
         <br />
-        &#127;&#127; &lt;Column widths={`{[3, 5, 12]}`} /&gt;
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 5, 12]}'} /&gt;
         <br />
         &lt;/Row&gt;
       </div>
       <br />
       <br />
+      <h2>Column Offsets</h2>
+      <p>
+        You can offset each column a unique amount for each breakpoint. Simply
+        pass in an array to the <code>offsets</code> prop that has the same
+        number of items as the <code>breakpoints</code> array.
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row breakpoints={[576, 769]}>
+          <Column widths={[4, 4]}>
+            <Demo>
+              <div>576px: 3</div>
+              <div>769px: 1</div>
+            </Demo>
+          </Column>
+          <Column widths={[3, 6]} offsets={[1, 0]}>
+            <Demo>
+              <div>576px: 1</div>
+              <div>769px: 0</div>
+            </Demo>
+          </Column>
+          <Column widths={[3, 7]} offsets={[1, 0]}>
+            <Demo>
+              <div>576px: 1</div>
+              <div>769px: 0</div>
+            </Demo>
+          </Column>
+          <Column widths={[6, 3]} offsets={[4, 1]}>
+            <Demo>
+              <div>576px: 4</div>
+              <div>769px: 1</div>
+            </Demo>
+          </Column>
+          <Column widths={[3, 9]}>
+            <Demo>
+              <div>576px: 1</div>
+              <div>769px: 2</div>
+            </Demo>
+          </Column>
+          <Column widths={[4, 4]}>
+            <Demo>
+              <div>576px: 1</div>
+              <div>769px: 4</div>
+            </Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row breakpoints=
+        {'{[576, 769]}'}
+        &gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[4, 4]}'} offsets=
+        {'{[1, 0]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 6]}'} offsets=
+        {'{[1, 0]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 7]}'} offsets=
+        {'{[4, 1]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[6, 3]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 9]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[4, 4]}'} /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div>
+      {/* <h2>Custom Flex Direction</h2>
+      <p>
+        You can change the flex direction for each of the breakpoints you define
+        in the <code>breakpoints</code> array by using the{' '}
+        <code>flexDirections</code> prop.
+      </p>
+      <div
+        style={{
+          background: '#f7f7f7cc',
+          padding: 16,
+          borderRadius: 5,
+          border: '1px solid #e8e8e8',
+          borderBottomRightRadius: 0,
+          borderBottomLeftRadius: 0,
+          margin: '16px 0',
+          marginBottom: 0,
+        }}
+      >
+        <Row
+          breakpoints={[576, 769, 1000]}
+          flexDirections={['row', 'column', 'row']}
+        >
+          <Column widths={[3, 2, 8]}>
+            <Demo>
+              <div>576px: 3</div>
+              <div>769px: 2</div>
+              <div>1000px: 8</div>
+            </Demo>
+          </Column>
+          <Column widths={[5, 10, 4]}>
+            <Demo>
+              <div>576px: 5</div>
+              <div>769px: 10</div>
+              <div>1000px: 4</div>
+            </Demo>
+          </Column>
+          <Column widths={[4, 3, 2]}>
+            <Demo>
+              <div>576px: 4</div>
+              <div>769px: 3</div>
+              <div>1000px: 2</div>
+            </Demo>
+          </Column>
+          <Column widths={[4, 9, 7]}>
+            <Demo>
+              <div>576px: 4</div>
+              <div>769px: 9</div>
+              <div>1000px: 7</div>
+            </Demo>
+          </Column>
+          <Column widths={[5, 7, 3]}>
+            <Demo>
+              <div>576px: 5</div>
+              <div>769px: 7</div>
+              <div>1000px: 3</div>
+            </Demo>
+          </Column>
+          <Column widths={[3, 5, 12]}>
+            <Demo>
+              <div>576px: 3</div>
+              <div>769px: 5</div>
+              <div>1000px: 12</div>
+            </Demo>
+          </Column>
+        </Row>
+      </div>
+      <div
+        style={{
+          fontFamily: 'monospace',
+          fontSize: 15,
+          background: '#000000dd',
+          padding: 16,
+          borderRadius: 5,
+          color: '#ffffff',
+          margin: '16px 0',
+          marginTop: 0,
+          borderTopRightRadius: 0,
+          borderTopLeftRadius: 0,
+        }}
+      >
+        &lt;Row breakpoints=
+        {'{[576, 769, 1000]}'}
+        &gt; &#127;&#127;&#127;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 2, 8]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[5, 10, 4]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[4, 3, 2]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[4, 9, 7]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[5, 7, 3]}'} /&gt;
+        <br />
+        &#127;&#127; &lt;Column widths=
+        {'{[3, 5, 12]}'} /&gt;
+        <br />
+        &lt;/Row&gt;
+      </div> */}
       <br />
       <br />
       <br />

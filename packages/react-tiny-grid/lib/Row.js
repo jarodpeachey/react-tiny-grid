@@ -1,8 +1,6 @@
 "use strict";
 
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -16,6 +14,12 @@ var _propTypes = _interopRequireDefault(require("prop-types"));
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 var _Column = require("./Column");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var Row = function Row(_ref) {
   var children = _ref.children,
@@ -55,7 +59,7 @@ exports.Row = Row;
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Row__Wrapper",
   componentId: "qfncuc-0"
-})(["", ";margin:0 -", "px 0 -", "px;width:", ";@media (min-width:", "px){flex-direction:", ";display:flex;justify-content:flex-start;flex-wrap:wrap;margin:", ";}", ";"], function (props) {
+})(["", ";margin:0 -", "px 0 -", "px;width:", ";@media (min-width:", "px){flex-direction:", ";display:flex;justify-content:flex-start;flex-wrap:wrap;margin:", ";}"], function (props) {
   return props.customStyles && (0, _styledComponents.css)(["", ""], props.customStyles);
 }, function (props) {
   return props.spacingX;
@@ -69,6 +73,29 @@ var Wrapper = _styledComponents["default"].div.withConfig({
   return props.flexDirections ? props.flexDirections[0] || 'row' : 'row';
 }, function (props) {
   return props.standardWidth ? '0' : "0 -".concat(props.spacingX, "px 0 -").concat(props.spacingX, "px");
-}, function (props) {
-  return props.flexDirections && props.flexDirections[1] && (0, _styledComponents.css)(["@media (min-width:", "px){flex-direction:", ";display:flex;justify-content:flex-start;flex-wrap:wrap;margin:0 -", "px 0 -", "px;"], props.breakpointTwo, props.flexDirections ? props.flexDirections[1] || 'row' : 'row', props.spacingX, props.spacingX);
-});
+}); // ${(props) =>
+//   props.flexDirections &&
+//   props.flexDirections[1] &&
+//   css`
+// @media (min-width: ${props.breakpointTwo}px) {
+//   flex-direction: ${
+//     props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
+//   };
+//   display: flex;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
+// `};
+// ${(props) =>
+//   props.flexDirections &&
+//   props.flexDirections[2] &&
+//   css`
+// @media (min-width: ${props.breakpointThree}px) {
+//   flex-direction: ${
+//     props.flexDirections ? props.flexDirections[2] || 'row' : 'row'
+//   };
+//   display: flex;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
+// `};

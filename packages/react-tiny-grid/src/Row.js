@@ -68,17 +68,31 @@ const Wrapper = styled.div`
         ? '0'
         : `0 -${props.spacingX}px 0 -${props.spacingX}px`};
   }
-  ${(props) =>
-    props.flexDirections &&
-    props.flexDirections[1] &&
-    css`
-  @media (min-width: ${props.breakpointTwo}px) {
-    flex-direction: ${
-      props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
-    };
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
-  `};
 `;
+
+  // ${(props) =>
+  //   props.flexDirections &&
+  //   props.flexDirections[1] &&
+  //   css`
+  // @media (min-width: ${props.breakpointTwo}px) {
+  //   flex-direction: ${
+  //     props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
+  //   };
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   flex-wrap: wrap;
+  //   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
+  // `};
+  // ${(props) =>
+  //   props.flexDirections &&
+  //   props.flexDirections[2] &&
+  //   css`
+  // @media (min-width: ${props.breakpointThree}px) {
+  //   flex-direction: ${
+  //     props.flexDirections ? props.flexDirections[2] || 'row' : 'row'
+  //   };
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   flex-wrap: wrap;
+  //   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
+  // `};
