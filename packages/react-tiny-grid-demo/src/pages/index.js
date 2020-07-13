@@ -19,8 +19,6 @@ import MultipleBreakpoints from '../components/sections/MultipleBreakpoints';
 import ColumnOffsets from '../components/sections/ColumnOffsets';
 
 const IndexPage = () => {
-  console.log(document.getElementById('custom-widths'));
-
   return (
     /* eslint-disable react/jsx-one-expression-per-line */
 
