@@ -15,9 +15,9 @@ const Header = ({
     typeof window !== 'undefined' && window.scrollY,
   );
   const onScroll = () => {
-    setScroll(window.scrollY);
+    setScroll(typeof window !== 'undefined' && window.scrollY);
 
-    if (window.scrollY > 50) {
+    if (typeof window !== 'undefined' && window.scrollY > 50) {
       document.getElementById('header').classList.add('scrolled');
     } else {
       document.getElementById('header').classList.remove('scrolled');
@@ -25,16 +25,20 @@ const Header = ({
   };
 
   useEffect(() => {
-    if (window.scrollY > 50) {
+    if (typeof window !== 'undefined' && window.scrollY > 50) {
       document.getElementById('header').classList.add('scrolled');
     } else {
       document.getElementById('header').classList.remove('scrolled');
     }
 
-    window.addEventListener('scroll', onScroll);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', onScroll);
+    }
 
     return () => {
-      window.removeEventListener('scroll', onScroll);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', onScroll);
+      }
     };
   });
 
@@ -42,7 +46,7 @@ const Header = ({
     <Wrapper
       className={className}
       id="header"
-      scrolled={window.scrollY > 50}
+      scrolled={typeof window !== 'undefined' && window.scrollY > 50}
       color={color}
       fixed={fixed}
       height={height}
@@ -50,7 +54,10 @@ const Header = ({
       scrollColor={scrollColor}
     >
       <div className="container">
-        <InnerContainer color={color} scrolled={window.scrollY > 50}>
+        <InnerContainer
+          color={color}
+          scrolled={typeof window !== 'undefined' && window.scrollY > 50}
+        >
           {children}
         </InnerContainer>
       </div>
