@@ -179,7 +179,7 @@ const IndexPage = () => {
                 <br />
               </Column>
               <Column widths={[4, 3]} className="mt-80">
-                {/* <Sticky className="pt-80" stickyStyle={{ paddingTop: 80 }}> */}
+                <Sticky className="pt-80" stickyStyle={{ paddingTop: 80 }}>
                   <div
                     style={{
                       background: 'white',
@@ -215,7 +215,7 @@ const IndexPage = () => {
                       Column Offsets
                     </SidebarLink>
                   </div>
-                {/* </Sticky> */}
+                </Sticky>
               </Column>
             </Row>
           </Hidden>
