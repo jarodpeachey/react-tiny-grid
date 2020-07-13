@@ -29,6 +29,9 @@ const GlobalStyles = createGlobalStyle`
   .heading {
     font-weight: 700;
   }
+  .uppercase {
+    text-transform: uppercase;
+  }
   p {
     color: ${(props) => props.theme.color.paragraph};
   }
@@ -85,6 +88,9 @@ const GlobalStyles = createGlobalStyle`
   .center {
     text-align: center;
     margin: 0 auto;
+  }
+  .pt-80 {
+    padding-top: 80px;
   }
 `;
 
@@ -167,12 +173,18 @@ const Layout = ({ children }) => {
             </MobileMenuItem> */}
           </MobileMenu>
         </Header>
-        {children}
+        <InnerWrapper>{children}</InnerWrapper>
+        
       </Wrapper>
     </ThemeProvider>
   );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+
+`;
+
+const InnerWrapper = styled.div`
+`;
 
 export default Layout;

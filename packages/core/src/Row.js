@@ -24,12 +24,11 @@ export const Row = ({
       maxColumnCount={maxColumnCount}
     >
       {React.Children.toArray(children).map((item) => {
-        console.log(item);
 
         return (
           item && (
             <Column
-              key='column'
+              key={`column-${className}-${id}-${Math.random()}`}
               breakpoints={breakpoints}
               spacingX={spacing[0]}
               spacingY={
@@ -38,6 +37,8 @@ export const Row = ({
               widths={item.props.widths}
               offsets={item.props.offsets}
               maxColumnCount={maxColumnCount}
+              className={item.props.className}
+              id={item.props.id}
             >
               {item.props.children}
             </Column>
@@ -70,29 +71,29 @@ const Wrapper = styled.div`
   }
 `;
 
-  // ${(props) =>
-  //   props.flexDirections &&
-  //   props.flexDirections[1] &&
-  //   css`
-  // @media (min-width: ${props.breakpointTwo}px) {
-  //   flex-direction: ${
-  //     props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
-  //   };
-  //   display: flex;
-  //   justify-content: flex-start;
-  //   flex-wrap: wrap;
-  //   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
-  // `};
-  // ${(props) =>
-  //   props.flexDirections &&
-  //   props.flexDirections[2] &&
-  //   css`
-  // @media (min-width: ${props.breakpointThree}px) {
-  //   flex-direction: ${
-  //     props.flexDirections ? props.flexDirections[2] || 'row' : 'row'
-  //   };
-  //   display: flex;
-  //   justify-content: flex-start;
-  //   flex-wrap: wrap;
-  //   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
-  // `};
+// ${(props) =>
+//   props.flexDirections &&
+//   props.flexDirections[1] &&
+//   css`
+// @media (min-width: ${props.breakpointTwo}px) {
+//   flex-direction: ${
+//     props.flexDirections ? props.flexDirections[1] || 'row' : 'row'
+//   };
+//   display: flex;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
+// `};
+// ${(props) =>
+//   props.flexDirections &&
+//   props.flexDirections[2] &&
+//   css`
+// @media (min-width: ${props.breakpointThree}px) {
+//   flex-direction: ${
+//     props.flexDirections ? props.flexDirections[2] || 'row' : 'row'
+//   };
+//   display: flex;
+//   justify-content: flex-start;
+//   flex-wrap: wrap;
+//   margin: 0 -${props.spacingX}px 0 -${props.spacingX}px;
+// `};

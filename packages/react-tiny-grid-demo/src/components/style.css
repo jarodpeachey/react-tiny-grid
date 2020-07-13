@@ -25,7 +25,11 @@ body {
   font-size: 16px;
 }
 body {
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* margin-top: 60px; */
+}
+.mt-80 {
+  margin-top: -80px !important;
 }
 
 .container {
@@ -33,7 +37,7 @@ body {
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
-  max-width: 960px;
+  max-width: 1400px;
 }
 
 @media (min-width: 576px) {

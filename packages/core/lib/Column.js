@@ -30,10 +30,6 @@ var Column = function Column(_ref) {
       offsets = _ref.offsets,
       _ref$maxColumnCount = _ref.maxColumnCount,
       maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount;
-  console.log(maxColumnCount);
-  console.log(12 / (12 / maxColumnCount));
-  console.log(12 / maxColumnCount / 12 * 100);
-  console.log(12 / (maxColumnCount * 100) / 12);
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
     className: className,
     id: id,
@@ -56,19 +52,19 @@ exports.Column = Column;
 
 var Demo = _styledComponents["default"].div.withConfig({
   displayName: "Column__Demo",
-  componentId: "xu10n0-0"
+  componentId: "lyyf5z-0"
 })(["width:100%;height:100px;background:", ";color:white;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-direction:column;align-items:flex-end;"], function (props) {
   return props.theme.color.primary;
 });
 
 var Info = _styledComponents["default"].div.withConfig({
   displayName: "Column__Info",
-  componentId: "xu10n0-1"
+  componentId: "lyyf5z-1"
 })([""]);
 
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Column__Wrapper",
-  componentId: "xu10n0-2"
+  componentId: "lyyf5z-2"
 })(["width:100%;> *{width:100% !important;}flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
   return 12 / props.maxColumnCount / 12 * 100;
 }, function (props) {

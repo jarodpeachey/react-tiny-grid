@@ -41,15 +41,16 @@ var Row = function Row(_ref) {
     flexDirections: flexDirections || null,
     maxColumnCount: maxColumnCount
   }, _react["default"].Children.toArray(children).map(function (item) {
-    console.log(item);
     return item && /*#__PURE__*/_react["default"].createElement(_Column.Column, {
-      key: "column",
+      key: "column-".concat(className, "-").concat(id, "-").concat(Math.random()),
       breakpoints: breakpoints,
       spacingX: spacing[0],
       spacingY: typeof spacing[1] === 'number' ? spacing[1] : spacing[0],
       widths: item.props.widths,
       offsets: item.props.offsets,
-      maxColumnCount: maxColumnCount
+      maxColumnCount: maxColumnCount,
+      className: item.props.className,
+      id: item.props.id
     }, item.props.children);
   }));
 };
@@ -58,7 +59,7 @@ exports.Row = Row;
 
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Row__Wrapper",
-  componentId: "qfncuc-0"
+  componentId: "sc-11joboe-0"
 })(["", ";margin:0 -", "px 0 -", "px;width:", ";@media (min-width:", "px){flex-direction:", ";display:flex;justify-content:flex-start;flex-wrap:wrap;margin:", ";}"], function (props) {
   return props.customStyles && (0, _styledComponents.css)(["", ""], props.customStyles);
 }, function (props) {

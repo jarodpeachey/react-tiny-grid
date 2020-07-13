@@ -7,7 +7,6 @@ import { Link } from '@reach/router';
 const MenuItem = ({ children, className, id, submenu, square, align }) => {
   const [showSubMenu, setShowSubMenu] = useState(false);
   if (submenu) {
-    console.log(children[0].props);
     const link = (
       <Link to={children[0].props.to} className="menu-item">
         {children[0].props.children}

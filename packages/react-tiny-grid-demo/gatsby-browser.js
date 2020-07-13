@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable import/prefer-default-export */
+const scrollTo = (id) => () => {
+  const el = document.querySelector(id);
+  if (el) return window.scrollTo(0, el.offsetTop - 20);
+  return false;
+};
 
-// You can delete this file if you're not using it
+export const onRouteUpdate = ({ location: { hash } }) => {
+  if (hash) {
+    window.setTimeout(scrollTo(hash), 10);
+  }
+};

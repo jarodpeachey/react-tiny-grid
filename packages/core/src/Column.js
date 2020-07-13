@@ -13,11 +13,6 @@ export const Column = ({
   offsets,
   maxColumnCount = 12,
 }) => {
-  console.log(maxColumnCount);
-  console.log(12 / (12 / maxColumnCount));
-  console.log((12 / maxColumnCount / 12) * 100);
-  console.log(12 / (maxColumnCount * 100) / 12);
-
   return (
     <Wrapper
       className={className}
@@ -123,7 +118,8 @@ const Wrapper = styled.div`
     props.breakpointThree}px) and (max-width: 99999px) {
     width: ${(props) =>
       props.widthThree !== 'auto' ? `${(props.widthThree / 12) * 100}%` : null};
-    flex: ${(props) => (props.widthThree !== 'auto' ? 'none !important' : null)};
+    flex: ${(props) =>
+      props.widthThree !== 'auto' ? 'none !important' : null};
     margin-left: ${(props) =>
       props.offsetThree
         ? `${(props.offsetThree / 12) * 100}%`
