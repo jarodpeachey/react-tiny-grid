@@ -9,3 +9,8 @@ packages/cli/forestry/.env
 .DS_Store
 **/docs/
 .idea/
+.eslintrc
+.prettierrc
+yarn.lock
+**/*.lock
+**/.eslintrc
