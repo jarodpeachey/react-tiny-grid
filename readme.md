@@ -1,12 +1,22 @@
-# React Tiny Grid
+<p align="center">
+  <a href="https://react-tiny-grid.netlify.app">
+    <img alt="React Tiny Grid" src="https://react-tiny-grid.netlify.app/images/logo.png" width="70" />
+  </a>
+</p>
+<h1 align="center" style="border: none;">
+  React Tiny Grid
+</h1>
+<br>
+<p align="center">
+  React Tiny Grid is a grid system for React that makes it dead-simple to use complex flexbox layouts. It uses a 12-column system, making it easy to create responsive layouts.
+</p>
 
-React Tiny Grid is a grid system for React that makes it dead-simple to use complex flexbox layouts. It uses a 12-column system, making it easy to create responsive layouts.
 
 ### Table of Contents
 
 - [🚀 Getting Started](https://github.com/jarodpeachey/react-tiny-grid#getting-started)
-- [💬 Usage](https://github.com/jarodpeachey/react-tiny-grid#adding-comment-functionality)
-- [🎨 Accepted Props](https://github.com/jarodpeachey/triangle-comments#custom-configuration)
+- [💬 Usage](https://github.com/jarodpeachey/react-tiny-grid#usage)
+- [🎨 Accepted Props](https://github.com/jarodpeachey/react-tiny-grid#accepted-props)
 
 ## Getting Started
 
