@@ -46,8 +46,8 @@ const Hero = () => (
         {'</Row>'}
       </pre>
       <a
-        className="button mr-2 mt-2"
-        style={{ display: 'block' }}
+        className="button mr-2 mt-3"
+        style={{ display: 'block', width: 'fit-content' }}
         href="https://github.com/jarodpeachey/react-tiny-grid"
       >
         Github
