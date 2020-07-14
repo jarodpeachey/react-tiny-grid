@@ -180,15 +180,37 @@ const IndexPage = () => {
 
 const Background = styled.div`
   background: ${(props) => props.theme.color.primary};
-  border-radius: 100% 53% 86% 100% / 64% 69% 100% 100%;
   position: absolute;
-  top: -20vw;
+  top: -150px;
   right: -180px;
-  transform: rotate(10deg);
-  height: 40vw;
+  // transform: rotate(10deg);
+  height: 300px;
   width: 100vw;
+  min-width: 576px;
   z-index: -1;
   max-width: 830px;
+
+  top: -200px;
+  height: 300px;
+  right: -380px;
+  border-radius: 20px;
+  @media (min-width: 960px) {
+    top: -200px;
+    height: 300px;
+    right: -300px;
+  }
+  @media (min-width: 1200px) {
+    top: -200px;
+    height: 300px;
+    right: -240px;
+    border-radius: 35px;
+  }
+  @media (min-width: 1500px) {
+    top: -200px;
+    height: 300px;
+    right: -50px;
+    border-radius: 50px;
+  }
 `;
 
 const Demo = styled.div`
