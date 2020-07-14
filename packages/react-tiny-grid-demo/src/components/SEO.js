@@ -32,11 +32,11 @@ const SEO = ({ title, description, image = null, article, slug }) => {
       <meta name="og:type" content="website" />
       <meta
         name="og:image"
-        content={`https://react-tiny-grid.netlify.app${image}`}
+        content={`https://react-tiny-grid.netlify.app${image || defaultImage}`}
       />
       <meta
         name="twitter:image"
-        content={`https://react-tiny-grid.netlify.app${image}`}
+        content={`https://react-tiny-grid.netlify.app${image || defaultImage}`}
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content={author} />
