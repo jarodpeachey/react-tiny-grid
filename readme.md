@@ -1,3 +1,5 @@
+# React Tiny Grid
+
 React Tiny Grid is a grid system for React that makes it dead-simple to use complex flexbox layouts. It uses a 12-column system, making it easy to create responsive layouts.
 
 ### Table of Contents
