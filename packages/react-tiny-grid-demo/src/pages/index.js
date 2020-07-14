@@ -32,61 +32,17 @@ const IndexPage = () => {
         >
           <Row spacing={[24]} breakpoints={[1000, 1500]}>
             <Column widths={[8, 9]}>
-              <h2 className="mt-none">Get Started</h2>
+              <h4 className="mt-none">Get Started</h4>
               <p>Install the package via NPM or Yarn.</p>
               <pre>$ npm install --save @react-tiny-grid/core</pre>
               <pre>$ yarn add @react-tiny-grid/core</pre>
-              <h2>Usage</h2>
               <MinimalConfiguration />
               <CustomSpacing />
               <MaxColumnCount />
               <CustomWidths />
               <MultipleBreakpoints />
               <ColumnOffsets />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <Row breakpoints={[576]}>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-                <Column>
-                  <Demo>Auto</Demo>
-                </Column>
-              </Row>
+              <h4 id="demo">Demo</h4>
               <Row breakpoints={[576, 800]}>
                 <Column widths={[3, 1]}>
                   <Demo>3, 1</Demo>
@@ -156,25 +112,21 @@ const IndexPage = () => {
                 </Column>
               </Row>
             </Column>
-            <Column widths={[4, 3]} className="mt-80" spacing={[0]}>
+            <Column widths={[4, 3]} className="mt-80">
               <Hidden show={1000}>
                 <Sticky className="pt-80" stickyStyle={{ paddingTop: 80 }}>
                   <div
                     style={{
                       background: 'white',
                       borderRadius: theme.radius,
-                      boxShadow:
-                        '0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08)',
+                      // boxShadow:
+                      // '0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08)',
+                      border: '1px solid #e8e8e8',
                       width: '100%',
-                      padding: '8px 0',
+                      padding: '18px',
                     }}
                   >
-                    <h6
-                      style={{ padding: '0px 12px' }}
-                      className="uppercase m-none my-2"
-                    >
-                      Usage
-                    </h6>
+                    <h6 className="uppercase m-none mb-2">Usage</h6>
                     <SidebarLink href="#minimal-configuration">
                       Basic Configuration
                     </SidebarLink>
@@ -198,48 +150,30 @@ const IndexPage = () => {
               </Hidden>
             </Column>
           </Row>
-          {/* <Hidden show={1000}>
-            <Row spacing={[24]} breakpoints={[1000, 1500]}>
-              <Column widths={[8, 9]}>
-                <h2 className="mt-none">Get Started</h2>
-                <p>Install the package via NPM or Yarn.</p>
-                <pre>$ npm install --save @react-tiny-grid/core</pre>
-                <pre>$ yarn add @react-tiny-grid/core</pre>
-                <h2>Usage</h2>
-                <SidebarLink href="#minimal-configuration">
-                  Basic Configuration
-                </SidebarLink>
-                <SidebarLink href="#custom-spacing">Custom Spacing</SidebarLink>
-                <SidebarLink href="#max-column-count">Max Columns</SidebarLink>
-                <Row>
-                  <Column>
-                    <SidebarLink href="#minimal-configuration">
-                      Basic Configuration
-                    </SidebarLink>
-                    <SidebarLink href="#custom-spacing">
-                      Custom Spacing
-                    </SidebarLink>
-                    <SidebarLink href="#max-column-count">
-                      Max Columns
-                    </SidebarLink>
-                  </Column>
-                </Row>
-                <MinimalConfiguration />
-                <CustomSpacing />
-                <MaxColumnCount />
-                <CustomWidths />
-                <MultipleBreakpoints />
-                <ColumnOffsets />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-              </Column>
+        </div>
+      </div>
+      <div
+        style={{
+          background: theme.color.primary,
 
-            </Row>
-          </Hidden> */}
+          color: 'white',
+        }}
+      >
+        <div
+          className="container"
+          style={{ paddingTop: 30, paddingBottom: 30 }}
+        >
+          Built and maintained by{' '}
+          <a
+            href="https://twitter.com/jarodpeachey"
+            style={{
+              textDecoration: 'none',
+              fontWeight: 'bold',
+              color: 'white',
+            }}
+          >
+            Jarod Peachey
+          </a>
         </div>
       </div>
     </Layout>
@@ -274,7 +208,7 @@ const Demo = styled.div`
 const SidebarLink = styled.a`
   display: block;
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 8px 0;
   color: ${(props) => props.theme.color.paragraph};
   :hover {
     color: ${(props) => props.theme.color.primary};

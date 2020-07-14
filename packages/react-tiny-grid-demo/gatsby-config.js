@@ -1,9 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'React Tiny Grid - Lightweight React Grid System',
     description:
-      'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs',
+      'A dead-simple grid system that works out-of-the-box, with advanced configuration options.',
+    defaultTitle: 'Jarod Peachey - Front End Web Developer',
+    defaultDescription:
+      'A dead-simple grid system that works out-of-the-box, with advanced configuration options.',
+    baseUrl: 'react-tiny-grid.netlify.app',
+    author: '@jarodpeachey',
+    socials: {
+      twitter: `https://twitter.com/jarodpeachey`,
+      github: `https://github.com/jarodpeachey/react-tiny-grid`,
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',

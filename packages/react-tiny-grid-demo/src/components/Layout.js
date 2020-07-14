@@ -16,10 +16,15 @@ import MobileSubMenu from './MobileSubMenu';
 import MobileSubMenuItem from './MobileSubMenuItem';
 import { theme } from './theme';
 
-import { faFeatherAlt, faFeather } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFeatherAlt,
+  faFeather,
+  faChevronDown,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SEO from './SEO';
 
-library.add(faFeather, faFeatherAlt);
+library.add(faFeather, faFeatherAlt, faChevronDown);
 
 const GlobalStyles = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
@@ -74,8 +79,7 @@ const GlobalStyles = createGlobalStyle`
     border: 2px solid ${(props) => props.theme.color.primary};
     border-radius: ${(props) => props.theme.radius};
     padding: 14px 18px;
-    text-transform: uppercase;
-    font-size: 14px;
+    font-size: 16px;
     color: white;
     text-decoration: none;
   }
@@ -100,6 +104,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles theme={theme} />
+      <SEO />
       <Wrapper>
         <Header height={90} scrollHeight={60} fixed color="transparent">
           <h2 style={{ margin: '6px 0' }}>
@@ -111,16 +116,36 @@ const Layout = ({ children }) => {
               toggleFunction={() => setMobileMenuOpen(!mobileMenuOpen)}
             />
           </Hidden>
-          <Hidden>
+          <Hidden show={769}>
             <Menu>
               <MenuItem>
                 <Link to="/">Home</Link>
               </MenuItem>
-              <MenuItem>
-                <Link to="#projects">Projects</Link>
+              <MenuItem submenu>
+                <Link to="#docs">Examples</Link>
+                <SubMenu>
+                  <SubMenuItem>
+                    <Link to="#minimal-configuration">Basic Usage</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="#custom-spacing">Custom Spacing</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="#max-column-count">Max Columns</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="#custom-widths">Custom Widths</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="#multiple-breakpoints">Multiple Breakpoints</Link>
+                  </SubMenuItem>
+                  <SubMenuItem>
+                    <Link to="#column-offsets">Column Offsets</Link>
+                  </SubMenuItem>
+                </SubMenu>
               </MenuItem>
               <MenuItem>
-                <Link to="#values">Values</Link>
+                <Link to="#demo">Demo</Link>
               </MenuItem>
               {/* <MenuItem submenu>
               <Link to="/components">Components</Link>
@@ -149,42 +174,44 @@ const Layout = ({ children }) => {
 
           <MobileMenu open={mobileMenuOpen}>
             <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
-              <Link to="#">Home</Link>
+              <Link to="/">Home</Link>
             </MobileMenuItem>
-            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
-              <Link to="#projects">Projects</Link>
-            </MobileMenuItem>
-            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
-              <Link to="#values">Values</Link>
-            </MobileMenuItem>
-            {/* <MobileMenuItem submenu>
-              <Link to="#projects">Components</Link>
+            <MobileMenuItem submenu>
+              <Link to="#docs">Examples</Link>
               <MobileSubMenu>
                 <MobileSubMenuItem>
-                  <Link to="/components/layout">Layout</Link>
+                  <Link to="#minimal-configuration">Basic Usage</Link>
                 </MobileSubMenuItem>
                 <MobileSubMenuItem>
-                  <Link to="/components/inputs">Inputs</Link>
+                  <Link to="#custom-spacing">Custom Spacing</Link>
                 </MobileSubMenuItem>
                 <MobileSubMenuItem>
-                  <Link to="/components/display">Display</Link>
+                  <Link to="#max-column-count">Max Columns</Link>
+                </MobileSubMenuItem>
+                <MobileSubMenuItem>
+                  <Link to="#custom-widths">Custom Widths</Link>
+                </MobileSubMenuItem>
+                <MobileSubMenuItem>
+                  <Link to="#multiple-breakpoints">Multiple Breakpoints</Link>
+                </MobileSubMenuItem>
+                <MobileSubMenuItem>
+                  <Link to="#column-offsets">Column Offsets</Link>
                 </MobileSubMenuItem>
               </MobileSubMenu>
-            </MobileMenuItem> */}
+            </MobileMenuItem>
+            <MobileMenuItem closeFunction={() => setMobileMenuOpen(false)}>
+              <Link to="#demo">Demo</Link>
+            </MobileMenuItem>
           </MobileMenu>
         </Header>
         <InnerWrapper>{children}</InnerWrapper>
-        
       </Wrapper>
     </ThemeProvider>
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div``;
 
-`;
-
-const InnerWrapper = styled.div`
-`;
+const InnerWrapper = styled.div``;
 
 export default Layout;

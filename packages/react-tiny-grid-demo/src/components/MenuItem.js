@@ -58,9 +58,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   transition-duration: 0.15s !important;
-  a {
+  > a {
     display: block;
-    width: fit-content;
+    width: 100%;
     padding: ${(props) => (props.square ? '12px' : '12px 18px')};
     text-decoration: none;
     cursor: pointer;
@@ -81,26 +81,15 @@ const SubMenuWrapper = styled.div`
       ${(props) => (props.open ? ', visibility 0s 0s' : ', visibility 0s .1s')};
   transform: ${(props) => (props.open ? 'scale(1)' : 'scale(.95)')};
   position: absolute;
-  min-width: calc(100% + 40px);
+  min-width: calc(100% + 90px);
   top: calc(100%);
-  padding-top: 14px;
+  padding-top: 8px;
   margin: 0 auto;
   left: ${(props) => (props.align !== 'right' ? 0 : null)};
   right: ${(props) => (props.align === 'right' ? 0 : null)};
   z-index: 999;
   filter: drop-shadow(0px 0px 5px #00000010);
-  ::after {
-    display: block;
-    content: '';
-    position: absolute;
-    right: ${(props) => (props.align === 'right' ? '20px' : null)};
-    left: ${(props) => (props.align !== 'right' ? '20px' : null)};
-    top: 8px;
-    width: 12px;
-    height: 12px;
-    transform: rotate(45deg);
-    background: white;
-  }
+
 `;
 
 export default MenuItem;

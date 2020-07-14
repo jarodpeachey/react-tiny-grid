@@ -7,10 +7,10 @@ export const Row = ({
   children,
   className,
   id,
-  breakpoints = [0],
+  breakpoints = [769],
   spacing = [12],
   flexDirections,
-  maxColumnCount,
+  maxColumnCount = 12,
 }) => {
   return (
     <Wrapper

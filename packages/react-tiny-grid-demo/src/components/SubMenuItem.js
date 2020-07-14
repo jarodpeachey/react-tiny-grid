@@ -12,23 +12,24 @@ const Wrapper = styled.div`
   a {
     display: block;
     width: 100%;
+    color: initial;
     padding: 8px 24px;
     text-decoration: none;
     background: none;
     transition-duration: 0.15s !important;
-    color: initial !important;
+    color: initial;
     font-weight: normal !important;
     width: 100%;
     border-radius: 0px;
     margin: 0;
     width: 100%;
     cursor: pointer;
+    :hover {
+      background: ${(props) => props.theme.color.primary}10;
+    }
     :active {
       background: ${(props) => props.theme.color.primary};
       color: white;
-    }
-    :hover {
-      background: ${(props) => props.theme.color.gray.one};
     }
   }
 `;

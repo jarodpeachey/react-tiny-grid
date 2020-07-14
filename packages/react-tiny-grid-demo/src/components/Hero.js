@@ -35,9 +35,6 @@ const Hero = () => (
       >
         Github
       </a>
-      <a className="button secondary mt-2" href="/">
-        Docs
-      </a>
     </div>
   </Wrapper>
 );

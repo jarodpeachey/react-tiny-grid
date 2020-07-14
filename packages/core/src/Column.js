@@ -8,7 +8,7 @@ export const Column = ({
   children,
   spacing,
   breakpoints,
-  widths,
+  widths = ['auto'],
   offsets,
   maxColumnCount = 12,
 }) => {

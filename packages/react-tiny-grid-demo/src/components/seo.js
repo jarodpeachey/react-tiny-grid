@@ -5,84 +5,84 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { useLocation } from '@reach/router';
+import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+const SEO = ({ title, description, image = null, article, slug }) => {
+  const { pathname } = useLocation();
+  const { site } = useStaticQuery(query);
 
-  const metaDescription = description || site.siteMetadata.description
+  const {
+    defaultTitle,
+    defaultDescription,
+    baseUrl,
+    author,
+  } = site.siteMetadata;
+
+  console.log(image);
+  const defaultImage = '/images/seo.png';
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
-  )
-}
+    <Helmet title={title || defaultTitle}>
+      <meta name="description" content={description || defaultDescription} />
+      <meta name="og:title" content={title || defaultTitle} />
+      <meta name="og:description" content={description || defaultDescription} />
+      <meta name="og:type" content="website" />
+      <meta
+        name="og:image"
+        content={`https://react-tiny-grid.netlify.app${image}`}
+      />
+      <meta
+        name="twitter:image"
+        content={`https://react-tiny-grid.netlify.app${image}`}
+      />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:creator" content={author} />
+      <meta name="twitter:title" content={title || defaultTitle} />
+      <meta
+        name="twitter:description"
+        content={description || defaultDescription}
+      />
+      {/* <html lang="en" />
+      <link
+        rel="canonical"
+        href={`https://react-tiny-grid.netlify.com${pathname}`}
+      />
+      <meta name="description" content={seo.description} /> */}
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
+      {/* <meta name="og:type" content="website" />
+      <meta name="og:url" content={seo.url} />
+      <meta name="og:description" content={seo.description} /> */}
+      {/* <meta name="og:image" content={seo.image} />
+      <meta name="image" content={seo.image} />
+      <meta name="twitter:image" content={seo.image} />
 
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-}
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="og:title" content={seo.title} />
+      <meta name="twitter:test:title" content={seo.title} /> */}
 
-export default SEO
+      {/* <meta name="twitter:widgets:theme" content="light" /> */}
+      {/* <meta name="twitter:dnt" content="on" /> */}
+      {/* <meta name="twitter:card" content="summary_large_image" /> */}
+      {/* <meta name="twitter:creator" content={author || '@jarod_peachey'} /> */}
+      {/* <meta name="twitter:description" content={seo.description} /> */}
+    </Helmet>
+  );
+};
+
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        defaultDescription: description
+        baseUrl
+        author
+      }
+    }
+  }
+`;
+
+export default SEO;

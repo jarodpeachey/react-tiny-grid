@@ -25,7 +25,8 @@ var Column = function Column(_ref) {
       children = _ref.children,
       spacing = _ref.spacing,
       breakpoints = _ref.breakpoints,
-      widths = _ref.widths,
+      _ref$widths = _ref.widths,
+      widths = _ref$widths === void 0 ? ['auto'] : _ref$widths,
       offsets = _ref.offsets,
       _ref$maxColumnCount = _ref.maxColumnCount,
       maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount;

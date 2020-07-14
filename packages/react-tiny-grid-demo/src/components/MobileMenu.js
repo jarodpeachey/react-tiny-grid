@@ -52,9 +52,10 @@ const MobileMenu = ({ children, className, id, open, customStyles }) => {
         open={open}
       >
         <InnerWrapper scrolled={scroll > 50} open={open}>
-          <div className="container">{children}</div>
+          {children}
         </InnerWrapper>
       </Wrapper>
+      <Background open={open} />
     </>
   );
 };
@@ -63,25 +64,19 @@ const Wrapper = styled.div`
   position: fixed;
   // top: 0;
   left: 0;
-  width: 100%;
-  top: 0;
-  transition: max-height 0.3s, background 0.3s;
+  width: calc(100% - 40px);
+  left: 20px;
+  top: ${props => props.scrolled ? '70px' : '84px'};
   overflow: hidden;
+  border-radius: 16px;
+  transition-delay: 0s !important;
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.open ? '1' : '0')};
   // transform: translateY(${(props) => (props.open ? '0' : '-100%')});
+  transform: scale(${(props) => (props.open ? 1 : 0.85)});
   z-index: 998;
-  transition-delay: backdrop-filter 0.5s;
-    -webkit-transition: max-height 0.3s ${(props) =>
-      props.open ? 'ease-in' : 'ease-out'};
-  -moz-transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  -ms-transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  -o-transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  transition: max-height 0.3s ${(props) =>
-    props.open ? 'ease-in' : 'ease-out'};
-  max-height: ${(props) => (props.open ? '100%' : '0')} !important;
-  height: 100%;
+  transition: all .2s;
+  box-shadow: rgba(50, 50, 93, 0.11) 0px 4px 6px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
 
   ${(props) => props.customStyles}
 `;
@@ -90,15 +85,20 @@ const InnerWrapper = styled.div`
   overflow-y: auto;
   height: 100%;
   padding: 12px;
-  background: #fffffff9;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.05), 0 2px 4px 0 rgba(0, 0, 0, 0.03),
-    0 4px 16px -6px rgba(0, 0, 0, 0.5);
-  padding: 12px 0;
-  padding-top: ${(props) => (props.scrolled ? '75px' : '107px')};
-  > div {
-    padding-top: 12px;
-    border-top: 2px solid ${(props) => props.theme.color.gray.one};
-  }
+  background: #ffffff;
+`;
+
+const Background = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: ${(props) => props.theme.color.gray.nine}30;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
+  opacity: ${(props) => (props.open ? '1' : '0')};
+  transition: .15s;
 `;
 
 // max-height: calc(

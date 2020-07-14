@@ -2,8 +2,22 @@ import React, { useState, useContext } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const MobileMenuItem = ({ children, className, id, submenu, align, icon }) => {
+const MobileMenuItem = ({
+  children,
+  className,
+  id,
+  submenu,
+  align,
+  icon,
+  closeFunction,
+}) => {
   const [showMobileSubMenu, setShowMobileSubMenu] = useState(false);
+
+  const customCloseFunction = () => {
+    document.getElementById('header').classList.remove('open');
+    closeFunction();
+  };
+
   return (
     <>
       {submenu ? (
@@ -39,7 +53,7 @@ const MobileMenuItem = ({ children, className, id, submenu, align, icon }) => {
           </MobileSubMenuWrapper>
         </>
       ) : (
-        <Wrapper className={className} id={id}>
+        <Wrapper className={className} onClick={customCloseFunction} id={id}>
           {children}
         </Wrapper>
       )}
@@ -54,10 +68,10 @@ const Wrapper = styled.div`
   transition-duration: 0.15s !important;
   width: 100%;
   svg {
-    color: ${(props) => props.theme.color.heading} !important;
-    fill: ${(props) => props.theme.color.heading} !important;
+    color: ${(props) => props.theme.color.gray.nine} !important;
+    fill: ${(props) => props.theme.color.gray.nine} !important;
   }
-  color: ${(props) => props.theme.color.heading};
+  color: ${(props) => props.theme.color.gray.nine} !important;
   ${(props) =>
     props.submenu &&
     css`
@@ -69,8 +83,8 @@ const Wrapper = styled.div`
         background: ${'#435a8e10'};
       }
       svg {
-        color: ${props.theme.color.heading} !important;
-        fill: ${props.theme.color.heading} !important;
+        color: ${props.theme.color.gray.nine} !important;
+        fill: ${props.theme.color.gray.nine} !important;
       }
     `};
   a {
@@ -78,7 +92,7 @@ const Wrapper = styled.div`
     width: ${(props) => (props.submenu ? 'fit-content' : '100%')};
     padding: ${(props) => (props.submenu ? 0 : '12px 16px')};
     text-decoration: none;
-    color: ${(props) => props.theme.color.heading};
+    color: ${(props) => props.theme.color.gray.nine} !important;
     cursor: pointer;
     background: ${(props) =>
       props.submenu ? 'transparent' : props.open ? '#435a8e10' : 'transparent'};
@@ -97,7 +111,7 @@ const MobileSubMenuWrapper = styled.div`
   -o-transition: all 0.15s;
   transition: all 0.15s;
   overflow: hidden;
-  max-height: ${(props) => (props.open ? '130px' : '0')} !important;
+  max-height: ${(props) => (props.open ? '244px' : '0')} !important;
 `;
 
 export default MobileMenuItem;

@@ -26,11 +26,12 @@ var Row = function Row(_ref) {
       className = _ref.className,
       id = _ref.id,
       _ref$breakpoints = _ref.breakpoints,
-      breakpoints = _ref$breakpoints === void 0 ? [0] : _ref$breakpoints,
+      breakpoints = _ref$breakpoints === void 0 ? [769] : _ref$breakpoints,
       _ref$spacing = _ref.spacing,
       spacing = _ref$spacing === void 0 ? [12] : _ref$spacing,
       flexDirections = _ref.flexDirections,
-      maxColumnCount = _ref.maxColumnCount;
+      _ref$maxColumnCount = _ref.maxColumnCount,
+      maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount;
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
     className: className,
     id: id,

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   background: #ffffff;
   padding: 8px 0;
   width: 100%;
-  box-shadow: ${(props) => props.theme.shadow.one};
+  box-shadow: ${(props) => props.theme.shadow};
   // box-shadow: ${(props) => props.theme.shadow.one};
 `;
 

@@ -76,12 +76,26 @@ const Wrapper = styled.div`
   z-index: 999;
   min-height: fit-content;
   background: transparent;
+  .menu-item,
+  .menu-item > a {
+    color: white !important;
+  }
+  span {
+    background: white !important;
+  }
   &.scrolled {
     height: ${(props) => props.scrollHeight}px;
     box-shadow: 0 0 4px 0 rgba(17, 22, 26, 0.08),
       0 2px 4px 0 rgba(17, 22, 26, 0.03), 0 4px 8px 0 rgba(17, 22, 26, 0.03);
     background: ${(props) => props.theme.color.primary};
-    * {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .menu-item,
+    .menu-item > a {
       color: white !important;
     }
     span {
