@@ -5,7 +5,7 @@ import { Column, Row } from '@react-tiny-grid/core';
 const MultipleBreakpoints = ({ children }) => {
   return (
     <Wrapper id="multiple-breakpoints" className="py-4">
-      <h4>Multiple Breakpoints</h4>
+      <h4 className="mt-none">Multiple Breakpoints</h4>
       <p>
         You can set up to three breakpoints to create a unique layout for each
         screen size.

@@ -5,7 +5,7 @@ import { Column, Row } from '@react-tiny-grid/core';
 const ColumnOffsets = ({ children }) => {
   return (
     <Wrapper id="column-offsets" className="py-4">
-      <h4>Column Offsets</h4>
+      <h4 className="mt-none">Column Offsets</h4>
       <p>
         You can offset each column a unique amount for each breakpoint. Simply
         pass in an array to the <code>offsets</code> prop that has the same

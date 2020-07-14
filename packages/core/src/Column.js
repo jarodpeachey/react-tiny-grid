@@ -6,20 +6,20 @@ export const Column = ({
   className,
   id,
   children,
-  spacingX,
-  spacingY,
+  spacing,
   breakpoints,
   widths,
   offsets,
   maxColumnCount = 12,
 }) => {
+  console.log(children);
   return (
     <Wrapper
       className={className}
       id={id}
       maxColumnCount={maxColumnCount}
-      spacingX={spacingX}
-      spacingY={spacingY}
+      spacingX={spacing[0]}
+      spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
       breakpointOne={breakpoints && breakpoints.length >= 1 && breakpoints[0]}
       breakpointTwo={
         breakpoints &&

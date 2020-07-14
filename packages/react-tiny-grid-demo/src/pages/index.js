@@ -30,153 +30,134 @@ const IndexPage = () => {
           className="container mt-4"
           style={{ position: 'relative', zIndex: 99 }}
         >
-          <Hidden hide={1000}>
-            <h2 className="mt-none">Get Started</h2>
-            <p>Install the package via NPM or Yarn.</p>
-            <pre>$ npm install --save @react-tiny-grid/core</pre>
-            <pre>$ yarn add @react-tiny-grid/core</pre>
-            <h2>Usage</h2>
-            <MinimalConfiguration />
-            <CustomSpacing />
-            <MaxColumnCount />
-            <CustomWidths />
-            <MultipleBreakpoints />
-            <ColumnOffsets />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <Row breakpoints={[576]}>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-              <Column>
-                <Demo>Auto</Demo>
-              </Column>
-            </Row>
-            <Row breakpoints={[576, 800]}>
-              <Column widths={[3, 1]}>
-                <Demo>3, 1</Demo>
-              </Column>
-              <Column widths={[5, 11]}>
-                <Demo>5, 11</Demo>
-              </Column>
-              <Column widths={[4, 2]}>
-                <Demo>2</Demo>
-              </Column>
-              <Column widths={[4, 10]}>
-                <Demo>4, 10</Demo>
-              </Column>
-              <Column widths={[3, 3]}>
-                <Demo>3, 3</Demo>
-              </Column>
-              <Column widths={[5, 9]}>
-                <Demo>5, 9</Demo>
-              </Column>
-              <Column widths={[5, 4]}>
-                <Demo>5, 4</Demo>
-              </Column>
-              <Column widths={[3, 8]}>
-                <Demo>3, 8</Demo>
-              </Column>
-              <Column widths={[4, 5]}>
-                <Demo>4, 5</Demo>
-              </Column>
-              <Column widths={[4, 7]}>
-                <Demo>4, 7</Demo>
-              </Column>
-              <Column widths={[3, 6]}>
-                <Demo>3, 6</Demo>
-              </Column>
-              <Column widths={[5, 6]}>
-                <Demo>5, 6</Demo>
-              </Column>
-              <Column widths={[3, 7]}>
-                <Demo>3, 7</Demo>
-              </Column>
-              <Column widths={[6, 5]}>
-                <Demo>6, 5</Demo>
-              </Column>
-              <Column widths={[3, 8]}>
-                <Demo>3, 8</Demo>
-              </Column>
-              <Column widths={[5, 4]}>
-                <Demo>5, 4</Demo>
-              </Column>
-              <Column widths={[3, 9]}>
-                <Demo>3, 9</Demo>
-              </Column>
-              <Column widths={[4, 3]}>
-                <Demo>4, 3</Demo>
-              </Column>
-              <Column widths={[4, 10]}>
-                <Demo>4, 10</Demo>
-              </Column>
-              <Column widths={[5, 2]}>
-                <Demo>5, 2</Demo>
-              </Column>
-              <Column widths={[3, 11]}>
-                <Demo>3, 11</Demo>
-              </Column>
-              <Column widths={[12, 1]}>
-                <Demo>12, 1</Demo>
-              </Column>
-            </Row>
-          </Hidden>
-          <Hidden show={1000}>
-            <Row spacing={[24]} breakpoints={[1000, 1500]}>
-              <Column widths={[8, 9]}>
-                <h2 className="mt-none">Get Started</h2>
-                <p>Install the package via NPM or Yarn.</p>
-                <pre>$ npm install --save @react-tiny-grid/core</pre>
-                <pre>$ yarn add @react-tiny-grid/core</pre>
-                <h2>Usage</h2>
-                <MinimalConfiguration />
-                <CustomSpacing />
-                <MaxColumnCount />
-                <CustomWidths />
-                <MultipleBreakpoints />
-                <ColumnOffsets />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-              </Column>
-              <Column widths={[4, 3]} className="mt-80">
+          <Row spacing={[24]} breakpoints={[1000, 1500]}>
+            <Column widths={[8, 9]}>
+              <h2 className="mt-none">Get Started</h2>
+              <p>Install the package via NPM or Yarn.</p>
+              <pre>$ npm install --save @react-tiny-grid/core</pre>
+              <pre>$ yarn add @react-tiny-grid/core</pre>
+              <h2>Usage</h2>
+              <MinimalConfiguration />
+              <CustomSpacing />
+              <MaxColumnCount />
+              <CustomWidths />
+              <MultipleBreakpoints />
+              <ColumnOffsets />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <Row breakpoints={[576]}>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+                <Column>
+                  <Demo>Auto</Demo>
+                </Column>
+              </Row>
+              <Row breakpoints={[576, 800]}>
+                <Column widths={[3, 1]}>
+                  <Demo>3, 1</Demo>
+                </Column>
+                <Column widths={[5, 11]}>
+                  <Demo>5, 11</Demo>
+                </Column>
+                <Column widths={[4, 2]}>
+                  <Demo>2</Demo>
+                </Column>
+                <Column widths={[4, 10]}>
+                  <Demo>4, 10</Demo>
+                </Column>
+                <Column widths={[3, 3]}>
+                  <Demo>3, 3</Demo>
+                </Column>
+                <Column widths={[5, 9]}>
+                  <Demo>5, 9</Demo>
+                </Column>
+                <Column widths={[5, 4]}>
+                  <Demo>5, 4</Demo>
+                </Column>
+                <Column widths={[3, 8]}>
+                  <Demo>3, 8</Demo>
+                </Column>
+                <Column widths={[4, 5]}>
+                  <Demo>4, 5</Demo>
+                </Column>
+                <Column widths={[4, 7]}>
+                  <Demo>4, 7</Demo>
+                </Column>
+                <Column widths={[3, 6]}>
+                  <Demo>3, 6</Demo>
+                </Column>
+                <Column widths={[5, 6]}>
+                  <Demo>5, 6</Demo>
+                </Column>
+                <Column widths={[3, 7]}>
+                  <Demo>3, 7</Demo>
+                </Column>
+                <Column widths={[6, 5]}>
+                  <Demo>6, 5</Demo>
+                </Column>
+                <Column widths={[3, 8]}>
+                  <Demo>3, 8</Demo>
+                </Column>
+                <Column widths={[5, 4]}>
+                  <Demo>5, 4</Demo>
+                </Column>
+                <Column widths={[3, 9]}>
+                  <Demo>3, 9</Demo>
+                </Column>
+                <Column widths={[4, 3]}>
+                  <Demo>4, 3</Demo>
+                </Column>
+                <Column widths={[4, 10]}>
+                  <Demo>4, 10</Demo>
+                </Column>
+                <Column widths={[5, 2]}>
+                  <Demo>5, 2</Demo>
+                </Column>
+                <Column widths={[3, 11]}>
+                  <Demo>3, 11</Demo>
+                </Column>
+                <Column widths={[12, 1]}>
+                  <Demo>12, 1</Demo>
+                </Column>
+              </Row>
+            </Column>
+            <Column widths={[4, 3]} className="mt-80" spacing={[0]}>
+              <Hidden show={1000}>
                 <Sticky className="pt-80" stickyStyle={{ paddingTop: 80 }}>
                   <div
                     style={{
@@ -214,9 +195,51 @@ const IndexPage = () => {
                     </SidebarLink>
                   </div>
                 </Sticky>
+              </Hidden>
+            </Column>
+          </Row>
+          {/* <Hidden show={1000}>
+            <Row spacing={[24]} breakpoints={[1000, 1500]}>
+              <Column widths={[8, 9]}>
+                <h2 className="mt-none">Get Started</h2>
+                <p>Install the package via NPM or Yarn.</p>
+                <pre>$ npm install --save @react-tiny-grid/core</pre>
+                <pre>$ yarn add @react-tiny-grid/core</pre>
+                <h2>Usage</h2>
+                <SidebarLink href="#minimal-configuration">
+                  Basic Configuration
+                </SidebarLink>
+                <SidebarLink href="#custom-spacing">Custom Spacing</SidebarLink>
+                <SidebarLink href="#max-column-count">Max Columns</SidebarLink>
+                <Row>
+                  <Column>
+                    <SidebarLink href="#minimal-configuration">
+                      Basic Configuration
+                    </SidebarLink>
+                    <SidebarLink href="#custom-spacing">
+                      Custom Spacing
+                    </SidebarLink>
+                    <SidebarLink href="#max-column-count">
+                      Max Columns
+                    </SidebarLink>
+                  </Column>
+                </Row>
+                <MinimalConfiguration />
+                <CustomSpacing />
+                <MaxColumnCount />
+                <CustomWidths />
+                <MultipleBreakpoints />
+                <ColumnOffsets />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
               </Column>
+
             </Row>
-          </Hidden>
+          </Hidden> */}
         </div>
       </div>
     </Layout>

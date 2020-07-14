@@ -20,9 +20,11 @@ const Wrapper = styled.div`
       display: block;
       @media (min-width: ${props.hide}px) {
         display: none;
+        visibility: hidden;
       }
       @media (min-width: ${props.show}px) {
         display: block;
+        visibility: visible;
       }
     `};
   ${(props) =>
@@ -31,29 +33,36 @@ const Wrapper = styled.div`
     props.show < props.hide &&
     css`
       display: none;
+      visibility: hidden;
       @media (min-width: ${props.show}px) {
         display: block;
+        visibility: visible;
       }
       @media (min-width: ${props.hide}px) {
         display: none;
+        visibility: hidden;
       }
     `};
   ${(props) =>
     !(props.show && props.hide) &&
     css`
       display: ${props.hide ? 'block' : 'none'};
-      @media (min-width: ${(props) => props.show}px) {
+      @media (min-width: ${props.show}px) {
         display: block;
+        visibility: visible;
       }
-      @media (min-width: ${(props) => props.hide}px) {
+      @media (min-width: ${props.hide}px) {
         display: none;
+        visibility: hidden;
       }
     `};
 `;
 const HideWrapper = styled.div`
   display: block;
+  visibility: visible;
   @media (min-width: ${(props) => props.hide}px) {
     display: none;
+    visibility: hidden;
   }
 `;
 

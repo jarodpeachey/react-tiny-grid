@@ -28,8 +28,10 @@ body {
   /* overflow: hidden; */
   /* margin-top: 60px; */
 }
-.mt-80 {
-  margin-top: -80px !important;
+@media (min-width: 1000px) {
+  .mt-80 {
+    margin-top: -80px !important;
+  }
 }
 
 .container {

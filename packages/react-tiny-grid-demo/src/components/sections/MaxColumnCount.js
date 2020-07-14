@@ -5,7 +5,7 @@ import { Column, Row } from '@react-tiny-grid/core';
 const MaxColumnCount = ({ children }) => {
   return (
     <Wrapper id="max-column-count" className="py-4">
-      <h4>Max Column Count</h4>
+      <h4 className="mt-none">Max Column Count</h4>
       <p>
         To limit how many columns are displayed in a single row, pass in a{' '}
         <code>maxColumnCount</code> prop with a value from 1-12.

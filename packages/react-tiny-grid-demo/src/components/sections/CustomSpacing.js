@@ -5,7 +5,7 @@ import { Column, Row } from '@react-tiny-grid/core';
 const CustomSpacing = ({ children }) => {
   return (
     <Wrapper id="custom-spacing" className="py-4">
-      <h4>Custom Spacing</h4>
+      <h4 className="mt-none">Custom Spacing</h4>
       <p>
         You can customize the spacing between each column using the{' '}
         <code>spacing</code> prop. For example:{' '}

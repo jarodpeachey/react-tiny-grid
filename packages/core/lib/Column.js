@@ -23,19 +23,19 @@ var Column = function Column(_ref) {
   var className = _ref.className,
       id = _ref.id,
       children = _ref.children,
-      spacingX = _ref.spacingX,
-      spacingY = _ref.spacingY,
+      spacing = _ref.spacing,
       breakpoints = _ref.breakpoints,
       widths = _ref.widths,
       offsets = _ref.offsets,
       _ref$maxColumnCount = _ref.maxColumnCount,
       maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount;
+  console.log(children);
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
     className: className,
     id: id,
     maxColumnCount: maxColumnCount,
-    spacingX: spacingX,
-    spacingY: spacingY,
+    spacingX: spacing[0],
+    spacingY: typeof spacing[1] === 'number' ? spacing[1] : spacing[0],
     breakpointOne: breakpoints && breakpoints.length >= 1 && breakpoints[0],
     breakpointTwo: breakpoints && breakpoints.length >= 1 && breakpoints[1] && breakpoints[1],
     breakpointThree: breakpoints && breakpoints.length >= 1 && breakpoints[2] && breakpoints[2],

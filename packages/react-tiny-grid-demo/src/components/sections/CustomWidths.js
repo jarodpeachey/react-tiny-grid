@@ -5,7 +5,7 @@ import { Column, Row } from '@react-tiny-grid/core';
 const CustomWidths = ({ children }) => {
   return (
     <Wrapper id="custom-widths" className="py-4">
-      <h4>Custom Column Widths</h4>
+      <h4 className="mt-none">Custom Column Widths</h4>
       <p>
         You can define custom column widths via the <code>widths</code> props,
         which accepts an array.

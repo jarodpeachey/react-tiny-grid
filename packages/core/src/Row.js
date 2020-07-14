@@ -30,15 +30,12 @@ export const Row = ({
             <Column
               key={`column-${className}-${id}-${Math.random()}`}
               breakpoints={breakpoints}
-              spacingX={spacing[0]}
-              spacingY={
-                typeof spacing[1] === 'number' ? spacing[1] : spacing[0]
-              }
               widths={item.props.widths}
               offsets={item.props.offsets}
               maxColumnCount={maxColumnCount}
               className={item.props.className}
               id={item.props.id}
+              spacing={item.props.spacing || spacing}
             >
               {item.props.children}
             </Column>
