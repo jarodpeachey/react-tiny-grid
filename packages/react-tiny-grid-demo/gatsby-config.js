@@ -6,7 +6,8 @@ module.exports = {
     defaultTitle: 'Jarod Peachey - Front End Web Developer',
     defaultDescription:
       'A dead-simple grid system that works out-of-the-box, with advanced configuration options.',
-    baseUrl: 'react-tiny-grid.netlify.app',
+    baseUrl: 'https://react-tiny-grid.netlify.app',
+    siteUrl: 'https://react-tiny-grid.netlify.app',
     author: '@jarodpeachey',
     socials: {
       twitter: `https://twitter.com/jarodpeachey`,
