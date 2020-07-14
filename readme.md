@@ -43,13 +43,13 @@ import { Row, Column } from '@react-tiny-grid/core';
 React Tiny Grid works out-of-the-box, so all you have to do is wrap each Column with a Row.
 
 ```
-<Row> 
- <Column />
- <Column />
- <Column />
- <Column />
- <Column />
- <Column />
+<Row>
+   <Column />
+   <Column />
+   <Column />
+   <Column />
+   <Column />
+   <Column />
 </Row>
 ```
 
@@ -66,9 +66,9 @@ You can specify certain widths for each column at different screen sizes. First,
 Then, you pass in a `widths` prop to each Column component. The value of this prop has to be an array with a length equal to the `breakpoints` array.
 
 ```
-<Row breakpoints={[769, 960]}> 
- <Column widths={[4, 3]} />
- <Column widths={[8, 9]} />
+<Row breakpoints={[769, 960]}>
+   <Column widths={[4, 3]} />
+   <Column widths={[8, 9]} />
 </Row>
 ```
 
@@ -77,19 +77,19 @@ Then, you pass in a `widths` prop to each Column component. The value of this pr
 You can change the vertical and horixontal gap between the columns using the `spacing` prop. This accepts an array of 2 numbers; the horizontal spacing (in px) and the vertical spacing.
 
 ```
-<Row spacing={[12, 24]} /> 
+<Row spacing={[12, 24]} />
 ```
 
 You can also pass in one number, which will set both the horizontal and vertical spacing.
 
 ```
-<Row spacing={12} /> 
+<Row spacing={12} />
 ```
 
 React Tiny Grid also gives you the option to override the spacing for individual columns. Just pass a `spacing` prop to the `Column` component you want to override.
 
 ```
-<Column spacing={[12, 24]} /> 
+<Column spacing={[12, 24]} />
 ```
 
 ### Max Columns Per Row
@@ -97,7 +97,7 @@ React Tiny Grid also gives you the option to override the spacing for individual
 In some cases, you'll want to limit the number of columns that can appear in one row (usually using the auto layout). You can do this by passing a single number to the `maxColumnCount` on the `Row` component.
 
 ```
-<Row maxColumnCount={3} /> 
+<Row maxColumnCount={3} />
 ```
 
 ### Column Offsets
@@ -105,13 +105,13 @@ In some cases, you'll want to limit the number of columns that can appear in one
 You can also offset each column by using the `offsets` prop. This prop accepts an array of numbers equal in length to the `breakpoints` array defined in the `Row` component. The value must be a number between 1 and 12.
 
 ```
-<Row breakpoints={[576, 769]}> 
- <Column widths={[4, 4]} offsets={[1, 0]} />
- <Column widths={[3, 6]} offsets={[1, 0]} />
- <Column widths={[3, 7]} offsets={[4, 1]} />
- <Column widths={[6, 3]} />
- <Column widths={[3, 9]} />
- <Column widths={[4, 4]} />
+<Row breakpoints={[576, 769]}>
+   <Column widths={[4, 4]} offsets={[1, 0]} />
+   <Column widths={[3, 6]} offsets={[1, 0]} />
+   <Column widths={[3, 7]} offsets={[4, 1]} />
+   <Column widths={[6, 3]} />
+   <Column widths={[3, 9]} />
+   <Column widths={[4, 4]} />
 </Row>
 ```
 
