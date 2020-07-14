@@ -193,7 +193,7 @@ const Background = styled.div`
 
 const Demo = styled.div`
   background: #546cde;
-  color: white;
+  color: white !important;
   font-size: 14px;
   display: flex;
   flex-direction: column;

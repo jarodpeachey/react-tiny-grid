@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     }
     :active {
       background: ${(props) => props.theme.color.primary};
-      color: white;
+      color: white !important;
     }
   }
 `;

@@ -114,7 +114,7 @@ const InnerContainer = styled.div`
 const Close = styled.div`
   font-size: 20px;
   font-weight: 600;
-  color: white;
+  color: white !important;
 `;
 
 Header.propTypes = {

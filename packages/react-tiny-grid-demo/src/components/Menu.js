@@ -15,7 +15,7 @@ const Wrapper = styled.nav`
 const Close = styled.div`
   font-size: 20px;
   font-weight: 600;
-  color: white;
+  color: white !important;
 `;
 
 export default Menu;

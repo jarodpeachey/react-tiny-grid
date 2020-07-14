@@ -73,7 +73,7 @@ const Demo = styled.div`
   width: 100%;
   height: 100px;
   background: ${(props) => props.theme.color.primary};
-  color: white;
+  color: white !important;
   border-radius: 4px;
   display: flex;
   align-items: center;

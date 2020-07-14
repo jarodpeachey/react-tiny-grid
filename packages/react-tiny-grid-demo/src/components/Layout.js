@@ -37,7 +37,7 @@ const GlobalStyles = createGlobalStyle`
   .uppercase {
     text-transform: uppercase;
   }
-  p, body, html, div, input, span {
+  p, body, html {
     color: ${(props) => props.theme.color.paragraph};
   }
   h1 {
@@ -68,7 +68,7 @@ const GlobalStyles = createGlobalStyle`
     background: ${(props) => props.theme.color.heading};
     border-radius: ${(props) => props.theme.radius};
     padding: 14px;
-    color: white;
+    color: white !important;
     z-index: 9;
     position: relative;
     font-family: monospace;
@@ -80,7 +80,7 @@ const GlobalStyles = createGlobalStyle`
     border-radius: ${(props) => props.theme.radius};
     padding: 14px 18px;
     font-size: 16px;
-    color: white;
+    color: white !important;
     text-decoration: none;
   }
   .button.secondary {
