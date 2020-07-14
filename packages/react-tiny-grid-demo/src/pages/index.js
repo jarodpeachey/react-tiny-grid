@@ -4,9 +4,7 @@ import '../components/style.css';
 import { Row, Column } from '@react-tiny-grid/core';
 import { Link } from 'gatsby';
 import { AnchorLink } from 'gatsby-plugin-anchor-links';
-
 import Sticky from 'react-sticky-el';
-import SEO from '../components/seo';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import { theme } from '../components/theme';
