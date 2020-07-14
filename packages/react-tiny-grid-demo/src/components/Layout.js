@@ -37,7 +37,7 @@ const GlobalStyles = createGlobalStyle`
   .uppercase {
     text-transform: uppercase;
   }
-  p {
+  p, body, html, div, input, span {
     color: ${(props) => props.theme.color.paragraph};
   }
   h1 {
