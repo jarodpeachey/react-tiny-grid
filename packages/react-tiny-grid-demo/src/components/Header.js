@@ -53,6 +53,10 @@ const Header = ({
       scrollHeight={scrollHeight}
       scrollColor={scrollColor}
     >
+      <Background
+        scrolled={typeof window !== 'undefined' && window.scrollY > 50}
+        scroll={typeof window !== 'undefined' && window.scrollY}
+      />
       <div className="container">
         <InnerContainer
           color={color}
@@ -115,6 +119,47 @@ const Close = styled.div`
   font-size: 20px;
   font-weight: 600;
   color: white !important;
+`;
+
+const Background = styled.div`
+  background: ${(props) => props.theme.color.primary};
+  position: absolute;
+  top: -150px;
+  right: -180px;
+  // transform: rotate(10deg);
+  height: 300px;
+  width: 100vw;
+  min-width: 576px;
+  z-index: -1;
+  max-width: 830px;
+
+  top: -200px;
+  height: 300px;
+  right: -380px;
+  border-radius: 20px;
+  @media (min-width: 960px) {
+    top: -200px;
+    height: 300px;
+    right: -300px;
+  }
+  @media (min-width: 1200px) {
+    top: -200px;
+    height: 300px;
+    right: -240px;
+    border-radius: 35px;
+  }
+  @media (min-width: 1500px) {
+    top: -200px;
+    height: 300px;
+    right: -50px;
+    border-radius: 50px;
+  }
+  transition: 0.3s;
+  // margin-top: -${props => props.scroll * 2}px;
+  ${props => props.scrolled && css`
+    height: 60px !important;
+    top: 0 !important;
+  `};
 `;
 
 Header.propTypes = {
