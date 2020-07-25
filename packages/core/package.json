@@ -1,6 +1,6 @@
 {
   "name": "@react-tiny-grid/core",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple, lightweight grid system for React",
   "main": "index.js",
   "private": false,
