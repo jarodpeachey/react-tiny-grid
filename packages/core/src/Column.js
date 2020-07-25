@@ -11,85 +11,46 @@ export const Column = ({
   widths = ['auto'],
   offsets,
   maxColumnCount = 12,
+  key
 }) => {
-  console.log(children);
+  // Breakpoints
+  const breakpointOne = breakpoints[0];
+  const breakpointTwo =
+    breakpoints.length >= 1 ? breakpoints[1] : null;
+  const breakpointThree =
+    breakpoints.length >= 2 ? breakpoints[2] : null;
+
+  // Widths
+  const widthOne = widths[0];
+  const widthTwo =
+    widths.length >= 1 ? widths[1] : null;
+  const widthThree =
+    widths.length >= 2 ? widths[2] : null;
+
+  // Offsets
+  const offsetOne = offsets[0];
+  const offsetTwo =
+    offsets.length >= 1 ? offsets[1] : null;
+  const offsetThree =
+    offsets.length >= 2 ? offsets[2] : null;
+
   return (
     <Wrapper
-      className={className}
-      id={id}
-      maxColumnCount={maxColumnCount}
-      spacingX={spacing[0]}
-      spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
-      breakpointOne={breakpoints && breakpoints.length >= 1 && breakpoints[0]}
-      breakpointTwo={
-        breakpoints &&
-        breakpoints.length >= 1 &&
-        breakpoints[1] &&
-        breakpoints[1]
-      }
-      breakpointThree={
-        breakpoints &&
-        breakpoints.length >= 1 &&
-        breakpoints[2] &&
-        breakpoints[2]
-      }
-      widthOne={widths && widths.length > 0 ? widths[0] : 'auto'}
-      widthTwo={
-        widths && widths.length > 0
-          ? widths[1]
-            ? widths[1]
-            : widths[0]
-          : 'auto'
-      }
-      widthThree={
-        widths && widths.length > 0
-          ? widths[2]
-            ? widths[2]
-            : widths[1]
-          : 'auto'
-      }
-      offsetOne={offsets && offsets.length > 0 ? offsets[0] : null}
-      offsetTwo={
-        offsets && offsets.length > 0
-          ? offsets[1]
-            ? offsets[1]
-            : offsets[0]
-          : null
-      }
-      offsetThree={
-        offsets && offsets.length > 0
-          ? offsets[2]
-            ? offsets[2]
-            : offsets[1]
-          : null
-      }
+      breakpointOne={breakpointOne}
+      breakpointTwo={breakpointTwo}
+      breakpointThree={breakpointThree}
+      widthOne={widthOne}
+      widthTwo={widthTwo}
+      widthThree={widthThree}
+      key={key}
     >
       {children}
     </Wrapper>
   );
 };
 
-const Demo = styled.div`
-  width: 100%;
-  height: 100px;
-  background: ${(props) => props.theme.color.primary};
-  color: white !important;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-end;
-`;
-
-const Info = styled.div``;
-
 const Wrapper = styled.div`
-  // min-width: ${(props) => (props.maxColumnCount / 12) * 100}% !important;
   width: 100%;
-  > * {
-    width: 100% !important;
-  }
   flex: 1 1 0;
   flex-basis: ${(props) => (12 / props.maxColumnCount / 12) * 100}% !important;
   padding: ${(props) => props.spacingY}px ${(props) => props.spacingX}px;
