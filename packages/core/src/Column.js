@@ -11,28 +11,22 @@ export const Column = ({
   widths = ['auto'],
   offsets,
   maxColumnCount = 12,
-  key
+  key,
 }) => {
   // Breakpoints
   const breakpointOne = breakpoints[0];
-  const breakpointTwo =
-    breakpoints.length >= 1 ? breakpoints[1] : null;
-  const breakpointThree =
-    breakpoints.length >= 2 ? breakpoints[2] : null;
+  const breakpointTwo = breakpoints.length >= 1 ? breakpoints[1] : null;
+  const breakpointThree = breakpoints.length >= 2 ? breakpoints[2] : null;
 
   // Widths
   const widthOne = widths[0];
-  const widthTwo =
-    widths.length >= 1 ? widths[1] : null;
-  const widthThree =
-    widths.length >= 2 ? widths[2] : null;
+  const widthTwo = widths.length >= 1 ? widths[1] : null;
+  const widthThree = widths.length >= 2 ? widths[2] : null;
 
   // Offsets
-  const offsetOne = offsets[0];
-  const offsetTwo =
-    offsets.length >= 1 ? offsets[1] : null;
-  const offsetThree =
-    offsets.length >= 2 ? offsets[2] : null;
+  const offsetOne = offsets.length > 0 ? offsets[0] : null;
+  const offsetTwo = offsets.length >= 1 ? offsets[1] : null;
+  const offsetThree = offsets.length >= 2 ? offsets[2] : null;
 
   return (
     <Wrapper
@@ -55,9 +49,9 @@ const Wrapper = styled.div`
   flex-basis: ${(props) => (12 / props.maxColumnCount / 12) * 100}% !important;
   padding: ${(props) => props.spacingY}px ${(props) => props.spacingX}px;
 
-  @media(min-width: ${(props) => props.breakpointOne}px) and (max-width: ${(
-  props
-) => props.breakpointTwo || 9999}px) {
+  @media (min-width: ${(props) => props.breakpointOne}px) and (max-width: ${(
+      props
+    ) => props.breakpointTwo || 9999}px) {
     width: ${(props) =>
       props.widthOne !== 'auto' ? `${(props.widthOne / 12) * 100}%` : null};
     flex: ${(props) => (props.widthOne !== 'auto' ? 'none !important' : null)};
@@ -65,9 +59,9 @@ const Wrapper = styled.div`
       props.offsetOne ? `${(props.offsetOne / 12) * 100}%` : null} !important;
   }
 
-  @media(min-width: ${(props) => props.breakpointTwo}px) and (max-width: ${(
-  props
-) => props.breakpointThree || 9999}px) {
+  @media (min-width: ${(props) => props.breakpointTwo}px) and (max-width: ${(
+      props
+    ) => props.breakpointThree || 9999}px) {
     width: ${(props) =>
       props.widthTwo !== 'auto' ? `${(props.widthTwo / 12) * 100}%` : null};
     flex: ${(props) => (props.widthTwo !== 'auto' ? 'none !important' : null)};
@@ -75,8 +69,8 @@ const Wrapper = styled.div`
       props.offsetTwo ? `${(props.offsetTwo / 12) * 100}%` : null} !important;
   }
 
-  @media(min-width: ${(props) =>
-    props.breakpointThree}px) and (max-width: 99999px) {
+  @media (min-width: ${(props) =>
+      props.breakpointThree}px) and (max-width: 99999px) {
     width: ${(props) =>
       props.widthThree !== 'auto' ? `${(props.widthThree / 12) * 100}%` : null};
     flex: ${(props) =>

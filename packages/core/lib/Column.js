@@ -40,7 +40,7 @@ var Column = function Column(_ref) {
   var widthTwo = widths.length >= 1 ? widths[1] : null;
   var widthThree = widths.length >= 2 ? widths[2] : null; // Offsets
 
-  var offsetOne = offsets[0];
+  var offsetOne = offsets.length > 0 ? offsets[0] : null;
   var offsetTwo = offsets.length >= 1 ? offsets[1] : null;
   var offsetThree = offsets.length >= 2 ? offsets[2] : null;
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
@@ -59,7 +59,7 @@ exports.Column = Column;
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Column__Wrapper",
   componentId: "lyyf5z-0"
-})(["width:100%;flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
+})(["width:100%;flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media (min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media (min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media (min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
   return 12 / props.maxColumnCount / 12 * 100;
 }, function (props) {
   return props.spacingY;
