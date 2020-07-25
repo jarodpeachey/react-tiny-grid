@@ -29,44 +29,37 @@ var Column = function Column(_ref) {
       widths = _ref$widths === void 0 ? ['auto'] : _ref$widths,
       offsets = _ref.offsets,
       _ref$maxColumnCount = _ref.maxColumnCount,
-      maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount;
-  console.log(children);
+      maxColumnCount = _ref$maxColumnCount === void 0 ? 12 : _ref$maxColumnCount,
+      key = _ref.key;
+  // Breakpoints
+  var breakpointOne = breakpoints[0];
+  var breakpointTwo = breakpoints.length >= 1 ? breakpoints[1] : null;
+  var breakpointThree = breakpoints.length >= 2 ? breakpoints[2] : null; // Widths
+
+  var widthOne = widths[0];
+  var widthTwo = widths.length >= 1 ? widths[1] : null;
+  var widthThree = widths.length >= 2 ? widths[2] : null; // Offsets
+
+  var offsetOne = offsets[0];
+  var offsetTwo = offsets.length >= 1 ? offsets[1] : null;
+  var offsetThree = offsets.length >= 2 ? offsets[2] : null;
   return /*#__PURE__*/_react["default"].createElement(Wrapper, {
-    className: className,
-    id: id,
-    maxColumnCount: maxColumnCount,
-    spacingX: spacing[0],
-    spacingY: typeof spacing[1] === 'number' ? spacing[1] : spacing[0],
-    breakpointOne: breakpoints && breakpoints.length >= 1 && breakpoints[0],
-    breakpointTwo: breakpoints && breakpoints.length >= 1 && breakpoints[1] && breakpoints[1],
-    breakpointThree: breakpoints && breakpoints.length >= 1 && breakpoints[2] && breakpoints[2],
-    widthOne: widths && widths.length > 0 ? widths[0] : 'auto',
-    widthTwo: widths && widths.length > 0 ? widths[1] ? widths[1] : widths[0] : 'auto',
-    widthThree: widths && widths.length > 0 ? widths[2] ? widths[2] : widths[1] : 'auto',
-    offsetOne: offsets && offsets.length > 0 ? offsets[0] : null,
-    offsetTwo: offsets && offsets.length > 0 ? offsets[1] ? offsets[1] : offsets[0] : null,
-    offsetThree: offsets && offsets.length > 0 ? offsets[2] ? offsets[2] : offsets[1] : null
+    breakpointOne: breakpointOne,
+    breakpointTwo: breakpointTwo,
+    breakpointThree: breakpointThree,
+    widthOne: widthOne,
+    widthTwo: widthTwo,
+    widthThree: widthThree,
+    key: key
   }, children);
 };
 
 exports.Column = Column;
 
-var Demo = _styledComponents["default"].div.withConfig({
-  displayName: "Column__Demo",
-  componentId: "lyyf5z-0"
-})(["width:100%;height:100px;background:", ";color:white;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-direction:column;align-items:flex-end;"], function (props) {
-  return props.theme.color.primary;
-});
-
-var Info = _styledComponents["default"].div.withConfig({
-  displayName: "Column__Info",
-  componentId: "lyyf5z-1"
-})([""]);
-
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Column__Wrapper",
-  componentId: "lyyf5z-2"
-})(["width:100%;> *{width:100% !important;}flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
+  componentId: "lyyf5z-0"
+})(["width:100%;flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media(min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
   return 12 / props.maxColumnCount / 12 * 100;
 }, function (props) {
   return props.spacingY;

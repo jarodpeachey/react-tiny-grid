@@ -43,7 +43,7 @@ var Row = function Row(_ref) {
     maxColumnCount: maxColumnCount
   }, _react["default"].Children.toArray(children).map(function (item) {
     return item && /*#__PURE__*/_react["default"].createElement(_Column.Column, {
-      key: "column-".concat(className, "-").concat(id, "-").concat(Math.random()),
+      key: "column-".concat(className, "-").concat(id),
       breakpoints: breakpoints,
       widths: item.props.widths,
       offsets: item.props.offsets,

@@ -28,7 +28,7 @@ export const Row = ({
         return (
           item && (
             <Column
-              key={`column-${className}-${id}-${Math.random()}`}
+              key={`column-${className}-${id}`}
               breakpoints={breakpoints}
               widths={item.props.widths}
               offsets={item.props.offsets}
