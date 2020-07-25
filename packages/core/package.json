@@ -21,7 +21,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "styled-components": "^5.1.0"
   },
-  "gitHead": "153351de45f0ea73f2959ab62891cfd5e792ed72",
+  "gitHead": "0809b95bfb22c3f7c6bfd18f745ca008b912485d",
   "repository": {
     "type": "git",
     "url": "https://github.com/jarodpeachey/react-tiny-grid",

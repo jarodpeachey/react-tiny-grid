@@ -50,6 +50,11 @@ var Column = function Column(_ref) {
     widthOne: widthOne,
     widthTwo: widthTwo,
     widthThree: widthThree,
+    offsetOne: offsetOne,
+    offsetTwo: offsetTwo,
+    offsetThree: offsetThree,
+    spacingX: spacing[0],
+    spacingY: typeof spacing[1] === 'number' ? spacing[1] : spacing[0],
     key: key
   }, children);
 };
@@ -59,7 +64,7 @@ exports.Column = Column;
 var Wrapper = _styledComponents["default"].div.withConfig({
   displayName: "Column__Wrapper",
   componentId: "lyyf5z-0"
-})(["width:100%;flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media (min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media (min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", " !important;}@media (min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", " !important;}"], function (props) {
+})(["width:100%;flex:1 1 0;flex-basis:", "% !important;padding:", "px ", "px;@media (min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", ";}@media (min-width:", "px) and (max-width:", "px){width:", ";flex:", ";margin-left:", ";}@media (min-width:", "px) and (max-width:99999px){width:", ";flex:", ";margin-left:", ";}"], function (props) {
   return 12 / props.maxColumnCount / 12 * 100;
 }, function (props) {
   return props.spacingY;
@@ -74,7 +79,7 @@ var Wrapper = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.widthOne !== 'auto' ? 'none !important' : null;
 }, function (props) {
-  return props.offsetOne ? "".concat(props.offsetOne / 12 * 100, "%") : null;
+  return props.offsetOne ? "".concat(props.offsetOne / 12 * 100, "% !important") : null;
 }, function (props) {
   return props.breakpointTwo;
 }, function (props) {
@@ -84,7 +89,7 @@ var Wrapper = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.widthTwo !== 'auto' ? 'none !important' : null;
 }, function (props) {
-  return props.offsetTwo ? "".concat(props.offsetTwo / 12 * 100, "%") : null;
+  return props.offsetTwo ? "".concat(props.offsetTwo / 12 * 100, "% !important") : null;
 }, function (props) {
   return props.breakpointThree;
 }, function (props) {
@@ -92,5 +97,5 @@ var Wrapper = _styledComponents["default"].div.withConfig({
 }, function (props) {
   return props.widthThree !== 'auto' ? 'none !important' : null;
 }, function (props) {
-  return props.offsetThree ? "".concat(props.offsetThree / 12 * 100, "%") : null;
+  return props.offsetThree ? "".concat(props.offsetThree / 12 * 100, "% !important") : null;
 });

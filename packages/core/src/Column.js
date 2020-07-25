@@ -36,6 +36,11 @@ export const Column = ({
       widthOne={widthOne}
       widthTwo={widthTwo}
       widthThree={widthThree}
+      offsetOne={offsetOne}
+      offsetTwo={offsetTwo}
+      offsetThree={offsetThree}
+      spacingX={spacing[0]}
+      spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
       key={key}
     >
       {children}
@@ -56,7 +61,7 @@ const Wrapper = styled.div`
       props.widthOne !== 'auto' ? `${(props.widthOne / 12) * 100}%` : null};
     flex: ${(props) => (props.widthOne !== 'auto' ? 'none !important' : null)};
     margin-left: ${(props) =>
-      props.offsetOne ? `${(props.offsetOne / 12) * 100}%` : null} !important;
+      props.offsetOne ? `${(props.offsetOne / 12) * 100}% !important` : null};
   }
 
   @media (min-width: ${(props) => props.breakpointTwo}px) and (max-width: ${(
@@ -66,7 +71,7 @@ const Wrapper = styled.div`
       props.widthTwo !== 'auto' ? `${(props.widthTwo / 12) * 100}%` : null};
     flex: ${(props) => (props.widthTwo !== 'auto' ? 'none !important' : null)};
     margin-left: ${(props) =>
-      props.offsetTwo ? `${(props.offsetTwo / 12) * 100}%` : null} !important;
+      props.offsetTwo ? `${(props.offsetTwo / 12) * 100}% !important` : null};
   }
 
   @media (min-width: ${(props) =>
@@ -77,7 +82,7 @@ const Wrapper = styled.div`
       props.widthThree !== 'auto' ? 'none !important' : null};
     margin-left: ${(props) =>
       props.offsetThree
-        ? `${(props.offsetThree / 12) * 100}%`
-        : null} !important;
+        ? `${(props.offsetThree / 12) * 100}% !important`
+        : null};
   }
 `;
