@@ -24,9 +24,9 @@ export const Column = ({
   const widthThree = widths.length >= 2 ? widths[2] : null;
 
   // Offsets
-  const offsetOne = offsets.length > 0 ? offsets[0] : null;
-  const offsetTwo = offsets.length >= 1 ? offsets[1] : null;
-  const offsetThree = offsets.length >= 2 ? offsets[2] : null;
+  const offsetOne = offsets && offsets.length > 0 ? offsets[0] : null;
+  const offsetTwo = offsets && offsets.length >= 1 ? offsets[1] : null;
+  const offsetThree = offsets && offsets.length >= 2 ? offsets[2] : null;
 
   return (
     <Wrapper
