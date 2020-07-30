@@ -42,6 +42,7 @@ export const Column = ({
       spacingX={spacing[0]}
       spacingY={typeof spacing[1] === 'number' ? spacing[1] : spacing[0]}
       key={key}
+      className={className}
     >
       {children}
     </Wrapper>
